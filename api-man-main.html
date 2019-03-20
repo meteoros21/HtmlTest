@@ -10,31 +10,42 @@
   <style>
     body, html {width: 100%; height: 100%; margin: 0; padding: 0}
     .container2 {position: relative; width: 1000px; height: 100%; margin: 0 auto; padding: 0}
-    .my-header {width: 100%; height: 70px; border-left: 1px solid #ccc; border-right: 1px solid #cccccc; padding: 10px 20px}
+    .my-header {position: relative; width: 100%; height: 70px; border-left: 1px solid #ccc; border-right: 1px solid #cccccc; padding: 10px 20px}
     .my-body {position: absolute; top: 70px; width: 100%; bottom: 70px;border: 1px solid #cccccc}
     .my-body-left {position: absolute; width: 260px; top: 0; bottom: 0; border-right: 1px solid rgb(108, 117, 125);}
     .my-body-left-menu {position: absolute; width: 100%; top:0; bottom: 60px; overflow-y: auto}
     .my-body-left-buttons {position: absolute; width: 100%; height: 60px; bottom: 0; padding: 10px}
+    .my-body-right {position: absolute; left: 260px; top: 0; right: 0; bottom: 0; }
     .my-footer {position: absolute; width: 100%; height: 70px; bottom: 0; border-left: 1px solid #ccc; border-right: 1px solid #cccccc}
+    .dropdown-header {width: 100%; background-color: #f8f8f8; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc}
+
+
   </style>
 </head>
 <body>
 <div class="container2">
   <div class="my-header bg-dark">
-    <p class="text-white">API Management System</p>
+    <p class="text-white" style="font-size: 20px; margin-top: 10px">API Management System</p>
+    <div style="position: absolute; right: 0; bottom: 0; margin-right: 20px; margin-bottom: -5px">
+      <ul class="list-inline">
+        <li class="list-inline-item"><small><a href="#" style="color: white">System Information</a></small></li>
+        <li class="list-inline-item"><small><a href="#" style="color: white">API List</a></small></li>
+        <li class="list-inline-item"><small><a href="#" style="color: white">Help</a></small></li>
+      </ul>
+    </div>
   </div>
 
   <div class="my-body">
     <div class="my-body-left">
       <div class="my-body-left-menu">
         <div class="list-group">
-          <h2 class="dropdown-header" style="width: 100%; background-color:#f8f8f8; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">야구 시스템</h2>
+          <h2 class="dropdown-header">야구 시스템</h2>
           <a class="dropdown-item" href="#">TAMM Spring Cloud</a>
           <a class="dropdown-item" href="#">TAMM Brism API</a>
           <a class="dropdown-item" href="#">API-Server1</a>
         </div>
         <div class="list-group">
-          <h2 class="dropdown-header" style="width: 100%; background-color:#f8f8f8; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">농구 시스템</h2>
+          <h2 class="dropdown-header">농구 시스템</h2>
           <a class="dropdown-item" href="#">API-Server1</a>
           <a class="dropdown-item" href="#">API-Server1</a>
           <a class="dropdown-item" href="#">API-Server1</a>
@@ -42,7 +53,7 @@
           <a class="dropdown-item" href="#">API-Server1</a>
         </div>
         <div class="list-group">
-          <h2 class="dropdown-header" style="width: 100%; background-color:#f8f8f8; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">통합 시스템</h2>
+          <h2 class="dropdown-header">통합 시스템</h2>
           <a class="dropdown-item" href="#">API-Server1</a>
           <a class="dropdown-item" href="#">API-Server1</a>
           <a class="dropdown-item" href="#">API-Server1</a>
@@ -50,7 +61,7 @@
           <a class="dropdown-item" href="#">API-Server1</a>
         </div>
         <div class="list-group">
-          <h2 class="dropdown-header" style="width: 100%; background-color:#f8f8f8; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">농구 시스템</h2>
+          <h2 class="dropdown-header">농구 시스템</h2>
           <a class="dropdown-item" href="#">API-Server1</a>
           <a class="dropdown-item" href="#">API-Server1</a>
           <a class="dropdown-item" href="#">API-Server1</a>
@@ -63,6 +74,25 @@
         <button type="button" class="btn btn-outline-secondary btn-sm">Server</button>
         <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
       </div>
+    </div>
+    <div class="my-body-right">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"><a class="nav-link active" href="#sitab" role="tab" data-toggle="tab">Server Info..</a></li>
+        <li class="nav-item"><a class="nav-link" href="#apitab" role="tab" data-toggle="tab">API List</a></li>
+        <li class="nav-item"><a class="nav-link" href="#helptab" role="tab" data-toggle="tab">Help</a></li>
+
+      </ul>
+      </li>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="sitab" style="">Write something for home tab</div>
+        <div class="tab-pane" id="apitab">The Java is an object-oriented programming language <br /> that was developed by James Gosling from the Sun Microsystems in 1995.</div>
+        <div class="tab-pane" id="helptab">C# is also a programming language</div>
+
+      </div>
+
     </div>
   </div>
   <div class="my-footer bg-secondary"></div>
