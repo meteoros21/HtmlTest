@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>TreeMenu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        body, html {width: 100%; height: 100%; margin: 0; padding: 0}
+        .container2 {position: relative; width: 1200px; height: 100%; margin: 0 auto; padding: 0}
+        .my-header {position: relative; width: 100%; height: 70px; border-left: 1px solid #ccc; border-right: 1px solid #cccccc; padding: 10px 20px}
+        .my-body {position: absolute; top: 70px; width: 100%; bottom: 4em;border-left: 1px solid #cccccc; border-right: 1px solid #cccccc}
+        .my-body-left {position: absolute; width: 260px; top: 0; bottom: 0; border-right: 1px solid rgb(108, 117, 125);}
+        .my-body-left-menu {position: absolute; width: 100%; top:0; bottom: 60px; overflow-y: auto}
+        .my-body-left-bottom {position: absolute; width: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 60px; border-top: 1px solid #cccccc}
+        .my-body-left-buttons {position: absolute; width: 100%; height: 60px; bottom: 0; padding: 10px}
+        .my-body-right {position: absolute; left: 260px; top: 0; right: 0; bottom: 0; }
+        .my-footer {position: absolute; width: 100%; height: 4em; bottom: 0; border-left: 1px solid #ccc; border-right: 1px solid #cccccc}
+
+        .my-tree-menu ul {
+            padding-left: 15px;
+        }
+        .my-tree-menu li {
+            list-style: none;
+            padding-left: 15px;
+            cursor: pointer;
+        }
+        .my-tree-menu li.opened {
+            background-image: url("img/icons8-sort-down-24.png");
+            background-repeat: no-repeat;
+            background-size: 0.8em;
+            background-position-y: center;
+            background-position-x: left;
+        }
+        .my-tree-menu li.closed {
+            background-image: url("img/icons8-play-24.png");
+            background-repeat: no-repeat;
+            background-size: 0.8em;
+            background-position-y: center;
+            background-position-x: left;
+        }
+        .my-tree-menu li.active {
+            background-color: #f8f8f8;
+            color: #3e82cf;
+        }
+
+        .dropdown-header {width: 100%; background-color: #f8f8f8; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc; line-height: 1.8rem}
+        .dropdown-item {line-height: 1.8rem}
+        /*.list-group a.active { background-color: #6c757d; color: white}*/
+
+        .tab-pane { padding: 4px 18px}
+        .my-top-nav {position: absolute; right: 0; bottom: 0; margin-right: 30px; margin-bottom: -1px}
+        .my-top-nav a {color: white; font-size: 14px; padding: 8px 10px; text-decoration: none; display: inline-block}
+        .my-top-nav a.active {color: black; background-color: white}
+        .tab-pane {position: absolute; top:0px; bottom: 60px; width: 100%; overflow-y: auto}
+        .my-body-right-bottom {position: absolute; width: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 60px; border-top: 1px solid #cccccc}
+        .my-body-right-buttons {position: absolute; width: 200px; height: 60px; bottom: 0; right: 10px; padding: 10px; border-top: 1px solid #cccccc}
+        .my-input { border: none; width: 100%; outline: none}
+        .my-input:focus { border-bottom: 1px solid #cccccc }
+
+        #menu-edit-buttons {position: absolute; width: 40px; text-align: right; z-index: 100; background-color: transparent}
+        #menu-edit-buttons button {border: none; background-color: transparent; font-size: small; padding: 2px; outline: none}
+
+        .menu-edit-buttons {float: right}
+        .menu-edit-buttons button {border: none; background-color: transparent; font-size: small; padding: 2px; outline: none}
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            // Tree Item을 2-depth 단위로 동적으로 읽는다.
+            initTree($('.my-body-left-menu'));
+
+            $('.my-body-left-menu').find('li').on('click', function (e) {
+                var delta = e.pageX - this.getBoundingClientRect().left;
+                if (delta <= 10)
+                {
+                    if ($(this).hasClass('opened'))
+                    {
+                        closeTree($(this))
+                    }
+                    else if ($(this).hasClass('closed'))
+                    {
+                        openTree($(this))
+                    }
+                }
+                else
+                {
+                    $('.my-body-left-menu').find('.active').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+
+        function initTree(parent)
+        {
+            // Root Item을 등록한다.
+            parent.append('<ul><li class="closed" data-id="0">Root</li></ul>');
+
+            // 첫번째 자식들을 읽어온다.
+            var items = loadChildTree(0);
+            var rootLi = parent.find('li[data-id=0]');
+
+            if (items.length > 0)
+            {
+                var ul = $('<ul data-parent-id="0"></ul>');
+                ul.insertAfter(rootLi);
+
+                addChildTreeItem(ul, items);
+            }
+        }
+
+        function addChildTreeItem(ul, items)
+        {
+            for (var i = 0; i < items.length; i++)
+            {
+                var item = items[i];
+                var li = $('<li data-id="' + item.id + '">' + item.label + '</li>');
+                ul.append(li);
+
+                // 하위에 자식이 또 있는 경우, 빈 <ul>을 닫힌 상태로 등록해 둔다.
+                if (item.hasChildren == true)
+                {
+                    li.addClass('closed');
+                    $('<ul data-parent-id="' + item.id + '"></ul>').insertAfter(li);
+                }
+            }
+        }
+
+        function openTree(li)
+        {
+            li.removeClass('closed');
+            li.addClass('opened');
+
+            var childUl = li.next('ul');
+
+            // 자식이 있다고 표시만 해두고, 실제로 자식이 로드되지 않은 경우
+            if (childUl.children().length == 0)
+            {
+                // 현재 <li>로부터 id를 얻어 그 자식들을 로드한다.
+                var id = li.attr('data-id');
+                var items = loadChildTree(id);
+
+                // 자식들을 등록한다.
+                addChildTreeItem(childUl, items);
+            }
+
+            childUl.css('display', '');
+        }
+
+        function closeTree(li)
+        {
+            li.removeClass('opened');
+            li.addClass('closed');
+            li.next('ul').css('display', 'none');
+        }
+
+        function loadChildTree(parentId)
+        {
+            var items = [];
+
+            if (parentId == 0)
+            {
+                items.push({id: 1, label: 'First Child', hasChildren: true});
+                items.push({id: 2, label: 'Second Child', hasChildren: true});
+            }
+            if (parentId == 1)
+            {
+                items.push({id: 3, label: 'First Grand Child', hasChildren: false});
+                items.push({id: 4, label: 'Second Grand Child', hasChildren: false});
+            }
+            else if (parentId == 2)
+            {
+                items.push({id: 5, label: 'Hello', hasChildren: false});
+                items.push({id: 6, label: 'World', hasChildren: false});
+            }
+
+            return items;
+        }
+    </script>
+</head>
+<body>
+<div class="container2">
+    <div class="my-header bg-dark">
+        <p class="text-white" style="font-size: 20px; margin-top: 10px">API Management System</p>
+        <div class="my-top-nav">
+            <ul class="list-inline nav nav-tabs" role="tablist">
+                <li class="nav-item list-inline-item"><a class="active" href="#sitab" role="tab" data-toggle="tab">System Information</a></li>
+                <li class="nav-item list-inline-item"><a href="#apitab" role="tab" data-toggle="tab">API List</a></li>
+                <li class="nav-item list-inline-item"><a href="#sourcetab" role="tab" data-toggle="tab">Source</a></li>
+                <li class="nav-item list-inline-item"><a href="#helptab" role="tab" data-toggle="tab">Help</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="my-body">
+        <div class="my-body-left">
+            <div class="my-body-left-menu my-tree-menu">
+                <!--<ul>-->
+                    <!--<li class="opened">Root</li>-->
+                    <!--<ul>-->
+                        <!--<li class="closed">Fist Child</li>-->
+                        <!--<ul style="display: none">-->
+                            <!--<li>First grand child</li>-->
+                            <!--<li>Second grand child</li>-->
+                        <!--</ul>-->
+                        <!--<li class="closed">Second Child</li>-->
+                        <!--<ul style="display: none">-->
+                            <!--<li>Hello</li>-->
+                            <!--<li>World</li>-->
+                        <!--</ul>-->
+                    <!--</ul>-->
+                <!--</ul>-->
+            </div>
+            <div class="my-body-left-bottom">
+                <div class="my-body-left-buttons btn-group">
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Group</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Server</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-body-right">
+            <!-- Nav tabs -->
+            <!--<ul class="nav nav-tabs" role="tablist">-->
+            <!--<li class="nav-item"><a class="nav-link active" href="#sitab" role="tab" data-toggle="tab">Server Info..</a></li>-->
+            <!--<li class="nav-item"><a class="nav-link" href="#apitab" role="tab" data-toggle="tab">API List</a></li>-->
+            <!--<li class="nav-item"><a class="nav-link" href="#sourcetab" role="tab" data-toggle="tab">Sources</a></li>-->
+            <!--<li class="nav-item"><a class="nav-link" href="#helptab" role="tab" data-toggle="tab">Help</a></li>-->
+            <!--</ul>-->
+            <!--</li>-->
+            <div class="my-body-right-bottom">
+                <div class="my-body-right-buttons btn-group">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fas fa-edit"></i> Update</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
+                </div>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="sitab">
+                    <h3>Service Information</h3>
+                    <table style="width: 100%" class="table">
+                        <tr>
+                            <th style="width: 25%">서비스 이름</th>
+                            <td><input type="text" class="my-input" name="serviceName"></td>
+                        </tr>
+                        <tr>
+                            <th>서비스 URL</th>
+                            <td><input type="text" class="my-input" name="serviceURL"></td>
+                        </tr>
+                        <tr>
+                            <th>데이터 소스</th>
+                            <td><input type="text" class="my-input" name="dataSource"></td>
+                        </tr>
+                        <tr>
+                            <th>개발 환경</th>
+                            <td><input type="text" class="my-input" name="devEnv"></td>
+                        </tr>
+                        <tr>
+                            <th>설명</th>
+                            <td><textarea class="my-input" name="serviceDescription" rows="20"></textarea></td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="tab-pane" id="apitab">The Java is an object-oriented programming language <br /> that was developed by James Gosling from the Sun Microsystems in 1995.</div>
+                <div class="tab-pane" id="sourcetab">
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                    The Java is an object-oriented programming language <br />
+                    that was developed by James Gosling from the Sun Microsystems in 1995.<br />
+                </div>
+                <div class="tab-pane" id="helptab">C# is also a programming language</div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="my-footer bg-secondary" style="padding: 1.5em 20px">
+        <p style="color: white;">I-ON Communications Co, LTD</p>
+    </div>
+</div>
+</body>
+</html>

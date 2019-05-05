@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .brism-sign-board {
+            width: 480px;
+            height: 120px;
+            font-weight: 700;
+            padding: 0;
+            margin: 0;
+            background-color: #343a40;
+            color: white;
+            overflow: hidden;
+        }
+
+        div.table {
+            display: table;
+        }
+
+        div.row {
+            display: table-row;
+        }
+
+        div.cell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        div.header {
+            font-size: 12px;
+        }
+
+        div.score-header {
+            width: 30px;
+            text-align: center;
+        }
+        div.score {
+            width: 30px;
+            text-align: center;
+            font-size: 2.0rem;
+        }
+
+        div.point-header {
+            padding: 0 1rem;
+        }
+        div.point {
+            font-size: 2.6rem;
+            padding: 0 1rem;
+        }
+
+        div.name1 {
+            padding: 0 1.8rem 0 1.0rem;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+        div.name2 {
+            padding: 0 0.5rem 0 0.8rem;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+        div.name3 {
+            padding: 0 1.2rem 0 0.5rem;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        div.border-top {
+            border-top: 1px solid #494f54;
+        }
+
+        .serve-player {
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            width: 10px; height: 10px; border: 2px solid yellow;
+        }
+        .serve-player.active {
+            background-color: yellow;
+        }
+
+        .flex-container {
+            width: 100%; height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center
+        }
+        .brism-sign-title-bar {
+            width: 100%; height: 30px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid white
+        }
+
+        .result-point {
+            padding: 0 1rem; font-size: 4rem
+        }
+        .result-name {
+            width: 100%; height: 29px; text-overflow: ellipsis; overflow: hidden
+        }
+        .result-name-group {
+            font-size: 1.5rem; margin: 0 0rem; width: 120px
+        }
+
+    </style>
+</head>
+<body>
+<div id="template-score1" class="brism-sign-board" style="display: none">
+    <div class="flex-container">
+    <div class="table">
+        <div class="row header">
+            <div class="cell point-header">points</div>
+            <div class="cell">Players</div>
+            <div class="cell score-header">1</div>
+            <div class="cell score-header">2</div>
+            <div class="cell score-header">3</div>
+            <div class="cell score-header">4</div>
+            <div class="cell score-header">5</div>
+        </div>
+        <div class="row">
+            <div class="cell border-top point">15</div>
+            <div class="cell border-top name1"><span id="server11" class="serve-player active"></span><span>홍길동</span></div>
+            <div class="cell border-top score" data-id="score2-in-set1">6</div>
+            <div class="cell border-top score" data-id="score2-in-set2">4</div>
+            <div class="cell border-top score" data-id="score2-in-set3">-</div>
+            <div class="cell border-top score" data-id="score2-in-set4">-</div>
+            <div class="cell border-top score" data-id="score2-in-set5">-</div>
+        </div>
+        <div class="row" style="margin-top: -15px">
+            <div class="cell border-top point">15</div>
+            <div class="cell border-top name1"><span id="server21" class="serve-player"></span><span>임꺽정</span></div>
+            <div class="cell border-top score" data-id="score2-in-set1">4</div>
+            <div class="cell border-top score" data-id="score2-in-set2">3</div>
+            <div class="cell border-top score" data-id="score2-in-set3">-</div>
+            <div class="cell border-top score" data-id="score2-in-set4">-</div>
+            <div class="cell border-top score" data-id="score2-in-set5">-</div>
+        </div>
+    </div>
+    </div>
+</div>
+<div id="template-score2" class="brism-sign-board" style="display: none">
+    <div class="flex-container">
+        <div class="table">
+            <div class="row header">
+                <div class="cell point-header">points</div>
+                <div class="cell">Players</div>
+                <div class="cell"></div>
+                <div class="cell score-header">1</div>
+                <div class="cell score-header">2</div>
+                <div class="cell score-header">3</div>
+                <div class="cell score-header">4</div>
+                <div class="cell score-header">5</div>
+            </div>
+            <div class="row">
+                <div class="cell border-top point">15</div>
+                <div class="cell border-top name2"><span data-id="server11" class="serve-player active"></span><span data-id="player11">홍길동</span></div>
+                <div class="cell border-top name3"><span data-id="server12" class="serve-player"></span><span data-id="player12">홍길동</span></div>
+                <div class="cell border-top score" data-id="score2-in-set1">6</div>
+                <div class="cell border-top score" data-id="score2-in-set2">4</div>
+                <div class="cell border-top score" data-id="score2-in-set3">-</div>
+                <div class="cell border-top score" data-id="score2-in-set4">-</div>
+                <div class="cell border-top score" data-id="score2-in-set5">-</div>
+            </div>
+            <div class="row" style="border-top: 1px solid white">
+                <div class="cell border-top point">15</div>
+                <div class="cell border-top name2"><span data-id="server21" class="serve-player"></span><span data-id="player21">임꺽정</span></div>
+                <div class="cell border-top name3"><span data-id="server22" class="serve-player"></span><span data-id="player22">신사임당</span></div>
+                <div class="cell border-top score" data-id="score2-in-set1">4</div>
+                <div class="cell border-top score" data-id="score2-in-set2">3</div>
+                <div class="cell border-top score" data-id="score2-in-set3">-</div>
+                <div class="cell border-top score" data-id="score2-in-set4">-</div>
+                <div class="cell border-top score" data-id="score2-in-set5">-</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="template-closed" class="brism-sign-board" style="display: none">
+    <div class="brism-sign-title-bar">
+        <div>게임이 종료되었습니다.</div>
+    </div>
+    <div class="flex-container" style="height: 90px">
+        <div style="width: 47%; display: flex; align-items: center; justify-content: center">
+            <div class="result-point" data-id="set-score1">3</div>
+            <div class="result-name-group">
+                <div class="result-name" style="text-align: right">홍길동</div>
+                <div class="result-name" style="text-align: right">김순이 입니다요.</div>
+            </div>
+        </div>
+        <div style="width: 6%">vs</div>
+        <div style="width: 47%; display: flex; align-items: center; justify-content: center">
+            <div class="result-name-group">
+                <div class="result-name" data-id="player21">임꺽정</div>
+                <div class="result-name" data-id="player22">신사임당입니다</div>
+            </div>
+            <div class="result-point" data-id="set-score2">3</div>
+        </div>
+    </div>
+</div>
+<div id="template-ready" class="brism-sign-board" style="background-color: white; display: none">
+    <div class="flex-container">
+        <img src="/img/ion/none.png" style="width: 480px">
+    </div>
+</div>
+<div id="template-message" class="brism-sign-board" style="display: none">
+    <div class="flex-container">
+        <div>
+            <marquee direction="left" data-id="message" style="width: 100%; font-size: 4rem">Hello World Hello World</marquee>
+        </div>
+    </div>
+</div>
+<div id="template-black" class="brism-sign-board" style="display: block">
+</div>
+</body>
+</html>

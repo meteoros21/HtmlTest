@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts-test1</title>
+    <!-- 구글을 통해 나눔고딕체를 얻는다. -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        html body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+        }
+        .logo-container {
+            width: 100%;
+        }
+        .logo-box {
+            max-width: 1100px;
+            min-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .logo-image {
+            height: 50px;
+        }
+        .top-link-group {
+            width: auto;
+            height: auto;
+            position: absolute;
+            bottom: 8px;
+            right:10px
+        }
+        .search-box {
+            float: right;
+            width: auto;
+            top: 50%;
+            position: relative;
+            transform: translateY(-50%);
+            margin-right: 8px;
+        }
+        .nav-container {
+            width: 100%;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background-color: rgb(248,248,248)
+        }
+        input.keyword {
+            width: 120px;
+            height: 2.6em;
+            padding: 0.3em 0.5em;
+            border-radius: 4px;
+            border: 1px solid rgb(221,221,221);
+            display: inline-block;
+            box-sizing: border-box;
+            margin-top: 1px;
+            outline: none;
+        }
+        button {
+            background: none;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        button.btn-sm {
+            background-color: #f8f8f8;
+            height: 2.6em;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0.3em 0.5em;
+            outline: none;
+        }
+        button.btn-sm:hover {
+            background-color: #3e82cf;
+            color: white;
+        }
+        .nav-bar {
+            width: 100%;
+            max-width: 1100px;
+            min-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40px;
+            box-sizing: content-box;
+            padding: 0;
+        }
+        .nav {
+            margin: 0;
+            box-sizing: border-box;
+            color: rgb(51,51,51);
+            display: block;
+            float: left;
+            font-size: 14px;
+            line-height: 20px;
+            list-style: none;
+            padding-inline-start: 5px;
+        }
+        .nav li {
+            box-sizing: border-box;
+            color: rgb(51,51,51);
+            list-style: none;
+            display: block;
+            float: left;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .nav > li > a {
+            line-height: 15px;
+            height: 40px;
+            position: relative;
+            display: block;
+            text-decoration: none;
+            padding: 12px 15px;
+            color: rgb(51,51,51);
+            box-sizing: border-box;
+        }
+        .nav > .active > a {
+            color: #43596b;
+            background-color: #dce1e5;
+        }
+        a.top-button {
+            text-decoration: none;
+            color: rgb(120,120,120);
+            font-size: 13px;
+            margin: 0 5px;
+        }
+        a.top-button:hover {color: rgb(51,51,51)}
+
+        .footer-container {
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 80px;
+            border-top: 1px solid rgb(221,221,221);
+            background-color: #dddddd;
+        }
+        .footer-box {
+            min-width: 900px;
+            max-width: 1100px;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px 0;
+            box-sizing: border-box
+        }
+        a {
+            color: rgb(51,51,51);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo-container">
+        <div class="logo-box" style="position: relative; height: 100%">
+            <img class="logo-image" src="img/idas_logo_tmp.png">
+            <div class="top-link-group">
+                <a href="#" class="top-button"><i class="fas fa-cogs"></i> Settings</a>
+                <a href="#" class="top-button"><i class="fas fa-sign-out-alt"></i> LogOut</a>
+            </div>
+        </div>
+    </div>
+    <div class="nav-container">
+        <form>
+        <div class="nav-bar">
+            <ul class="nav">
+                <li class="active"><a href="#">자산관리</a></li>
+                <li><a href="#">개인보관함</a></li>
+                <li><a href="#">자산현황</a></li>
+                <li><a href="#">광고지관리</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" class="keyword" placeholder="Search">
+                <button type="submit" class="btn btn-default btn-sm" style="margin-right: 5px"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="footer-container">
+        <div class="footer-box">
+            <img src="img/ion_logo_bw.png" style="height: 40px; vertical-align: middle; margin-right: 20px">
+            <span style="font-size: 14px; font-family: Arial">Copyright © 2014 <a href="http://www.i-on.net">I-ON Communications Co,. Ltd.</a> All rights reserved.</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

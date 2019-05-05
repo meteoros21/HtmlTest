@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .brism-sign-board {
+            width: 480px;
+            height: 120px;
+            font-weight: 700;
+            padding: 0;
+            margin: 0;
+            background-color: #343a40;
+            color: white;
+            overflow: hidden;
+        }
+        .brism-sign-title {
+            padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 0.8rem;
+        }
+        .brism-sign-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 84px;
+        }
+        .brism-sign-full-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem;
+        }
+        .brism-sign-p1 {
+            font-size: 4rem;
+            margin: 0 0.4rem;
+        }
+        .brism-sign-p2 {
+            font-size: 3rem;
+            margin: 0 0.4rem;
+        }
+        .brism-sign-p3 {
+            font-size: 2.5rem;
+            margin: 0 0.4rem;
+        }
+        .brism-sign-p4 {
+            font-size: 2.0rem;
+            margin: 0 0.4rem;
+        }
+        .brism-sign-p5 {
+            font-size: 1.5rem;
+            margin: 0 0.4rem;
+        }
+        .brism-sign-p6 {
+            font-size: 1.0rem;
+            margin: 0 0.4rem;
+        }
+        .brism-wide-margin {
+            margin: 0 0.8rem;
+        }
+        .brism-middle-margin {
+            margin: 0 0.6rem;
+        }
+        .w10 {
+            width: 10%;
+        }
+        .table-board {
+            /*height: 100%;*/
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            border-collapse: collapse;
+            border: 0;
+            border-spacing: 0;
+            box-sizing: border-box;
+            -webkit-border-vertical-spacing: 0;
+        }
+        .table-board tr {
+            margin: 0;
+            -webkit-border-vertical-spacing: 0;
+        }
+        .table-board td {
+            padding: 0;
+            margin: 0;
+            -webkit-border-vertical-spacing: 0;
+        }
+        .circular--square {
+            border-radius: 50%;
+        }
+        .serve-player {
+            border-radius: 50%;
+            width: 10px; height: 10px; border: 2px solid yellow;
+        }
+        .serve-player.active {
+            background-color: yellow;
+        }
+
+        .score-group {
+            width: 100%;
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        .score-header {
+            width: 30px;
+            text-align: center;
+        }
+        .score {
+            width: 30px;
+            text-align: center;
+            font-size: 2.0rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="template-score1" class="brism-sign-board" style="display: block">
+        <div style="width: 100%; height: 100%; padding: 0.5rem">
+            <div style="width: 100%; font-size: 11px; display: flex; justify-content: center; align-items: center">
+                <div style="width: 60px; text-align: center">Points</div>
+                <div style="width: 30px"></div>
+                <div style="width: 200px"></div>
+                <div class="score-header">1</div>
+                <div class="score-header">2</div>
+                <div class="score-header">3</div>
+                <div class="score-header">4</div>
+                <div class="score-header">5</div>
+            </div>
+            <div class="score-group" style="margin-top: -4px">
+                <div style="width: 60px; font-size: 3rem; text-align: center">15</div>
+                <div style="width: 20px; margin-left: 10px">
+                    <div style="width: 100%; height: 19px">
+                        <div class="serve-player active"></div>
+                    </div>
+                </div>
+                <div style="width: 200px; font-size: 1.2rem">
+                    <div style="width: 100%">홍길동</div>
+                </div>
+                <div class="score">6</div>
+                <div class="score">4</div>
+                <div class="score">3</div>
+                <div class="score"></div>
+                <div class="score"></div>
+            </div>
+            <div class="score-group" style="margin-top: -12px">
+                <div style="width: 60px; font-size: 3rem; text-align: center">15</div>
+                <div style="width: 20px; margin-left: 10px">
+                    <div style="width: 100%; height: 19px">
+                        <div class="serve-player"></div>
+                    </div>
+                </div>
+                <div style="width: 200px; font-size: 1.2rem">
+                    <div style="width: 100%">임꺽정</div>
+                </div>
+                <div class="score">4</div>
+                <div class="score">2</div>
+                <div class="score">3</div>
+                <div class="score"></div>
+                <div class="score"></div>
+            </div>
+        </div>
+    </div>
+    <p>aa</p>
+    <div id="template-score2" class="brism-sign-board" style="display: block">
+        <div style="width: 100%; height: 100%; padding: 0.5rem">
+            <div style="width: 100%; font-size: 11px; display: flex; justify-content: center; align-items: center">
+                <div style="width: 60px; text-align: center">Points</div>
+                <div style="width: 30px"></div>
+                <div style="width: 200px"></div>
+                <div class="score-header">1</div>
+                <div class="score-header">2</div>
+                <div class="score-header">3</div>
+                <div class="score-header">4</div>
+                <div class="score-header">5</div>
+            </div>
+            <div class="score-group" style="margin-top: -4px">
+                <div style="width: 60px; font-size: 3rem; text-align: center">15</div>
+                <div style="width: 20px; margin-left: 10px">
+                    <div style="width: 100%; height: 19px">
+                        <div class="serve-player active"></div>
+                    </div>
+                    <div style="width: 100%; height: 19px">
+                        <div class="serve-player" style=""></div>
+                    </div>
+                </div>
+                <div style="width: 200px; font-size: 1rem">
+                    <div style="width: 100%">홍길동</div>
+                    <div style="width: 100%">정난정</div>
+                </div>
+                <div class="score">6</div>
+                <div class="score">4</div>
+                <div class="score">3</div>
+                <div class="score"></div>
+                <div class="score"></div>
+            </div>
+            <div class="score-group" style="margin-top: -12px">
+                <div style="width: 60px; font-size: 3rem; text-align: center">15</div>
+                <div style="width: 20px; margin-left: 10px">
+                    <div style="width: 100%; height: 19px">
+                        <div class="serve-player"></div>
+                    </div>
+                    <div style="width: 100%; height: 19px">
+                        <div class="serve-player" style=""></div>
+                    </div>
+                </div>
+                <div style="width: 200px; font-size: 1rem">
+                    <div style="width: 100%">임꺽정</div>
+                    <div style="width: 100%">김미미</div>
+                </div>
+                <div class="score">4</div>
+                <div class="score">2</div>
+                <div class="score">3</div>
+                <div class="score"></div>
+                <div class="score"></div>
+            </div>
+        </div>
+    </div>
+<p>aa</p>
+    <div id="template-score3" class="brism-sign-board" style="box-sizing: border-box">
+        <div class="brism-sign-full-body" style="box-sizing: border-box; padding-bottom: 0.5rem">
+        <table class="table-board">
+            <tr style="height: 10px; font-size: 0.6rem">
+                <td style="width: 60px">Points</td>
+                <td style="width: 20px"></td>
+                <td style="min-width: 120px"></td>
+                <td style="width: 30px">1</td>
+                <td style="width: 30px">2</td>
+                <td style="width: 30px">3</td>
+                <td style="width: 30px">4</td>
+                <td style="width: 30px">5</td>
+            </tr>
+            <tr>
+                <td class="brism-sign-p3">15</td>
+                <td></td>
+                <td style="text-align: left; padding: 0 2rem 0 0; white-space: nowrap; overflow: hidden; max-width: 190px; text-overflow: ellipsis"><div class="serve-player active" style="display: inline-block; margin-right: 5px"></div>홍길동 아부지 어무이 아부지 아부지 할무이</td>
+                <td class="brism-sign-p4">6</td>
+                <td class="brism-sign-p4">3</td>
+                <td class="brism-sign-p4">2</td>
+                <td class="brism-sign-p4"></td>
+                <td class="brism-sign-p4"></td>
+            </tr>
+            <tr>
+                <td class="brism-sign-p3">15</td>
+                <td></td>
+                <td style="text-align: left; padding: 0 2rem 0 0; white-space: nowrap; overflow: hidden; max-width: 190px; text-overflow: ellipsis"><div class="serve-player" style="display: inline-block; margin-right: 5px"></div>홍길동</td>
+                <td class="brism-sign-p4">6</td>
+                <td class="brism-sign-p4">3</td>
+                <td class="brism-sign-p4">2</td>
+                <td class="brism-sign-p4"></td>
+                <td class="brism-sign-p4"></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    <p>aa</p>
+    <div id="template-score4" class="brism-sign-board" style="box-sizing: border-box">
+        <div class="brism-sign-full-body" style="box-sizing: border-box; padding-bottom: 0.5rem">
+            <table class="table-board">
+                <tr style="height: 10px; font-size: 0.6rem">
+                    <td style="padding-left: 1rem">Points</td>
+                    <td style="width: 20px"></td>
+                    <td style="padding: 0 1rem"></td>
+                    <td style="padding: 0 1rem"></td>
+                    <td style="width: 30px">1</td>
+                    <td style="width: 30px">2</td>
+                    <td style="width: 30px">3</td>
+                    <td style="width: 30px">4</td>
+                    <td style="width: 30px">5</td>
+                </tr>
+                <tr>
+                    <td class="brism-sign-p3" style="padding: 0 0 0 1rem">15</td>
+                    <td></td>
+                    <td style="text-align: left; padding: 0 0.5rem; white-space: nowrap; overflow: hidden; max-width: 110px; text-overflow: ellipsis"><div class="serve-player active" style="display: inline-block; margin-right: 5px"></div>임꺽정</td>
+                    <td style="text-align: left; padding: 0 2rem 0 1rem; white-space: nowrap; overflow: hidden; max-width: 110px; text-overflow: ellipsis"><div class="serve-player active" style="display: inline-block; margin-right: 5px"></div>임꺽정 옆집 아저씨 아부지 어무이</td>
+                    <td class="brism-sign-p4">6</td>
+                    <td class="brism-sign-p4">3</td>
+                    <td class="brism-sign-p4">2</td>
+                    <td class="brism-sign-p4"></td>
+                    <td class="brism-sign-p4"></td>
+                </tr>
+                <tr>
+                    <td class="brism-sign-p3" style="padding: 0 0 0 1rem">15</td>
+                    <td></td>
+                    <td style="text-align: left; padding: 0 0.5rem; white-space: nowrap; overflow: hidden; max-width: 110px; text-overflow: ellipsis"><div class="serve-player" style="display: inline-block; margin-right: 5px"></div>신사임당</td>
+                    <td style="text-align: left; padding: 0 2rem 0 1rem; white-space: nowrap; overflow: hidden; max-width: 110px; text-overflow: ellipsis"><div class="serve-player" style="display: inline-block; margin-right: 5px"></div>홍길동</td>
+                    <td class="brism-sign-p4">6</td>
+                    <td class="brism-sign-p4">3</td>
+                    <td class="brism-sign-p4">2</td>
+                    <td class="brism-sign-p4"></td>
+                    <td class="brism-sign-p4"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="template-closed" class="brism-sign-board" style="display: none">
+        <div class="brism-sign-title"><span>경기가 종료되었습니다.</span></div>
+        <div class="brism-sign-body">
+            <div class="brism-sign-p4 brism-wide-margin">홍길동</div>
+            <div class="brism-sign-p2 brism-wide-margin">2</div>
+            <div class="brism-wide-margin">VS</div>
+            <div class="brism-sign-p2 brism-wide-margin">1</div>
+            <div class="brism-sign-p4 brism-wide-margin">김만득</div>
+        </div>
+    </div>
+    <div id="template-message" class="brism-sign-board" style="display: none">
+        <div class="brism-sign-full-body">
+            <div>
+            <marquee direction="left" class="brism-sign-p1" style="font-size: 4rem; width: 100%">Hello World Hello World</marquee>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center; width: 800px; height: 200px; background-color: #dddddd">
+        <div style="width: 20px; height: 20px; background-color: #3e82cf"></div>
+        <div style="width: 20px; height: 30px; background-color: red"></div>
+        <div>
+            <marquee direction="left" style="font-size: 4rem; width: 200px">Hello World Hello World</marquee>
+        </div>
+    </div>
+</body>
+</html>
