@@ -1,0 +1,49 @@
+.name-card-wrap {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+}
+
+.name-card-wrap .name-card {
+    display: inline-block;
+    white-space: nowrap;
+    border: 1px solid #c2c2c2;
+    vertical-align: top;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.name-card-wrap .name-card .photo {
+    display: inline-block;
+    vertical-align: top;
+    width: 145px;
+    height: 110px;
+    background: #394557 url(../images/sub/bg_per_card.png) no-repeat center;
+}
+
+.name-card-wrap .name-card .position {
+    display: inline-block;
+    width: 145px;
+    height: 110px;
+    vertical-align: top;
+    padding-left: 10px;
+}
+
+.name-card .title1 {
+    font-size: 1.1rem;
+    color: #6b7076;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.name-card .name {
+    font-size: 1.2rem;
+    color: #303f56;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.name-card .title2 {
+    font-size: 1rem;
+    color: #bac1cc;
+}
