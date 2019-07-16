@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href="../css/common.css?v=0.1" rel="stylesheet">
     <style>
-        .table-rank {
+        .table-point {
+            width: 100%;
             border-collapse: collapse;
             border: 2px solid #c2c2c2;
         }
 
-        .table-rank th,td {
+        .table-point th,td {
             padding: 7px 5px;
             text-align: center;
             font-size: 1rem;
@@ -20,7 +21,7 @@
             width: 50px;
         }
 
-        .table-rank th {
+        .table-point th {
             background-color: #edf3fb;
         }
 
@@ -32,7 +33,7 @@
             /*color: #444;*/
             color: inherit;
             line-height: 1.1;
-            padding: .4em 1.4em .3em .8em;
+            padding: .6em 1.4em .5em .8em;
             box-sizing: border-box;
             /*margin: 0;*/
             border: 1px solid #aaa;
@@ -66,6 +67,7 @@
         .select-css option {
             font-weight:normal;
         }
+
 
     </style>
 </head>
@@ -109,8 +111,8 @@
     <div class="content-wrap inner-wrap">
         <div class="left-area">
             <div class="current-page-name">랭킹 정보</div>
-            <div class="page-menu active"><a href="ranking.html">아마골퍼 랭킹</a></div>
-            <div class="page-menu"><a href="game-points.html">랭킹산정 배점표</a></div>
+            <div class="page-menu"><a href="ranking.html">아마골퍼 랭킹</a></div>
+            <div class="page-menu active"><a href="game-points.html">랭킹산정 배점표</a></div>
         </div>
         <div class="right-area">
             <div class="title">아마골퍼 랭킹</div>
@@ -128,37 +130,102 @@
                         <option>2013년 기준</option>
                     </select>
                 </div>
-                <div style="margin-bottom: 50px; width: 100%; overflow-x: auto">
-                    <table class="table-rank" style="width: 100%">
+                <div style="margin-bottom: 20px">
+                    <div>500점 대회: KGA미드아마선수권대회, KMAGF 회장배</div>
+                    <div>400점 대회: 브리지스톤골프배, 볼빅배</div>
+                    <div>300점 대회: 부산MBC</div>
+                    <div>200점 대회: </div>
+                    <div>100점 대회: 한일전, KGA클럽대항전, 벤제프(예선), KGA 한국시너어, 벤제프(본선)</div>
+                </div>
+                <div style="margin-bottom: 50px; width: 100%;">
+                    <table class="table-point">
                         <tr>
                             <th>순위</th>
-                            <th>선수명</th>
-                            <th>배점(100)<br/>경기</th>
-                            <th>배점(200)<br/>경기</th>
-                            <th>배점(300)<br/>경기</th>
-                            <th>배점(400)<br/>경기</th>
-                            <th>배점(500)<br/>경기</th>
-                            <th>Total</th>
+                            <th>배점(500)</th>
+                            <th>배점(400)</th>
+                            <th>배점(300)</th>
+                            <th>배점(200)</th>
+                            <th>배점(100)</th>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>김양권</td>
-                            <td>550</td>
-                            <td>65</td>
+                            <th>1</th>
+                            <td>500</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
                             <td>100</td>
-                            <td></td>
-                            <td></td>
-                            <td>745</td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>신철호</td>
+                            <th>2</th>
+                            <td>400</td>
+                            <td>320</td>
+                            <td>240</td>
+                            <td>160</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
                             <td>350</td>
-                            <td>65</td>
-                            <td>100</td>
-                            <td></td>
-                            <td></td>
-                            <td>645</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>8</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>9</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+                            <td>350</td>
+                            <td>280</td>
+                            <td>210</td>
+                            <td>140</td>
+                            <td>70</td>
                         </tr>
                     </table>
                 </div>
@@ -193,5 +260,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
