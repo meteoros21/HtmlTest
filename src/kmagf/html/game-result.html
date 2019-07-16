@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미드아마추어골프연맹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="../css/common.css?v=0.3" rel="stylesheet">
+    <style>
+        .small-tag {
+            display: inline-block;
+            width: 65px;
+            height: 24px;
+            line-height: 24px;
+            margin: 0 10px 3px 0;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 3px;
+            color: white; background-color: #707070
+        }
+        .small-tag.active {
+            color: white; background-color: #50a232
+        }
+        .game-row2 {
+            position: relative;
+            padding: 20px 0 20px 0;
+            cursor: pointer;
+        }
+        .game-row2 span, img {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+        .game-row2 div {
+            margin: 10px 0 10px 10px;
+            font-size: 1.0rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        .table-summary {
+            margin-bottom: 50px;
+        }
+        .table-summary .cell {
+            padding: 20px 0;
+        }
+        .table-summary .cell img {
+            margin: 5px 2px;
+        }
+        .sub-logo {
+            background: url(../images/common/logo_sub.png) no-repeat;
+            background-size: 112px auto;
+            width: 142px;
+            height: 40px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        .table-record-list {
+            font-size: 0.8rem;
+            border-collapse: collapse;
+            border: 1px solid #c2c2c2;
+        }
+        .table-record-list th, td {
+            border-collapse: collapse;
+            border: 1px solid #c2c2c2;
+            white-space: nowrap;
+            padding: 2px;
+            text-align: center;
+            width: 22px;
+        }
+        .table-record-list th {
+            background-color: #dee2e6;
+        }
+        .table-record-list td:nth-child(2) {
+            letter-spacing: -1px;
+        }
+        .table-record-list .birdie {
+            background-color: peachpuff;
+        }
+        .table-record-list .bogey {
+            background-color: lightblue;
+        }
+        .table-record-list .double-bogey {
+            background-color: blue;
+            color: white;
+        }
+        .table-record-list .eagle {
+            background-color: orangered;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top-margin"></div>
+<div class="top-menu-section">
+    <div class="top-menu-wrap inner-wrap">
+        <div class="logo"></div>
+        <ul class="navi main-navi">
+            <li><a href="#">연맹소개</a></li>
+            <li><a href="#">대회정보</a></li>
+            <li><a href="#">자료실</a></li>
+            <li><a href="#">후원</a></li>
+            <li><a href="#">게시판</a></li>
+            <li><a href="#">SHOP</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner-section">
+    <div class="inner-wrap banner-wrap">
+        <h1>대회정보</h1>
+        <h3>Tournament information</h3>
+    </div>
+</div>
+<div class="submenu-section">
+    <div class="inner-wrap submenu-wrap">
+        <ul class="navi-path">
+            <li><a href="/">&nbsp;</a></li>
+            <li>경기결과</li>
+        </ul>
+        <div class="submenu-container">
+            <ul class="navi">
+                <li class="active"><a href="game-list.html">2019 대회정보</a></li>
+                <li><a href="#">지난 대회정보</a></li>
+                <li><a href="ranking.html">아마추어 랭킹</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="content-wrap inner-wrap">
+        <div class="left-area">
+            <div class="current-page-name">2019년 대회</div>
+            <div class="page-menu"><a href="game-summary.html">대회</a></div>
+            <div class="page-menu"><a href="game-guide.html">대회요강</a></div>
+            <div class="page-menu"><a href="game-schedule.html">일정,장소 및 조편성</a></div>
+            <div class="page-menu"><a href="game-join.html">참가신청</a></div>
+            <div class="page-menu active"><a href="game-result.html">경기결과</a></div>
+            <div class="page-menu"><a href="game-award.html">시상내역</a></div>
+        </div>
+        <div class="right-area">
+            <div class="title">경기결과</div>
+            <hr style="border-top: 1px solid #cccccc"/>
+            <div class="sub-game-links">
+                <a class="active" href="game-result.html?gameId=1">예선</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">16강 A그룹</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">16강 B그룹</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">8강</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">4강, 결승</a>
+            </div>
+            <div class="body">
+                <div class="game-row2">
+                    <!--<span class="small-tag active">진행중</span>-->
+                    <img src="../images/sub/player_logo_bridgestonegolf.png">
+                    <span style="font-size: 1.3rem; letter-spacing: -2px">제 5회 벤제프 클럽챔피언십</span>
+                    <div>제 5회 벤제프 클럽챔피언십 (예선): 2016.05.02 / 천룡CC</div>
+                </div>
+
+                <div style="margin-bottom: 50px">
+                    <table class="table-record-list" style="width: 100%;">
+                        <tr>
+                            <th rowspan="2">No</th>
+                            <th rowspan="2">성명</th>
+                            <th>Hole</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>ST</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>ST</th>
+                            <th>T</th>
+                            <th>T</th>
+                            <th rowspan="2">T</th>
+                        </tr>
+                        <tr>
+                            <th>Par</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>36</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>5</th>
+                            <th>36</th>
+                            <th>최종일</th>
+                            <th>1R</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>김양권(88)</td>
+                            <td></td>
+                            <td class="birdie">4</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="birdie">3</td>
+                            <td class="birdie">4</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>최범식(캐슬렉스서울)</td>
+                            <td></td>
+                            <td class="par">5</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="double-bogey">6</td>
+                            <td class="eagle">2</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>김양권(88)</td>
+                            <td></td>
+                            <td class="birdie">4</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="birdie">3</td>
+                            <td class="birdie">4</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>최범식(캐슬렉스서울)</td>
+                            <td></td>
+                            <td class="par">5</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="double-bogey">6</td>
+                            <td class="eagle">2</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>김양권(88)</td>
+                            <td></td>
+                            <td class="birdie">4</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="birdie">3</td>
+                            <td class="birdie">4</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>최범식(캐슬렉스서울)</td>
+                            <td></td>
+                            <td class="par">5</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="double-bogey">6</td>
+                            <td class="eagle">2</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>김양권(88)</td>
+                            <td></td>
+                            <td class="birdie">4</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="birdie">3</td>
+                            <td class="birdie">4</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>최범식(캐슬렉스서울)</td>
+                            <td></td>
+                            <td class="par">5</td>
+                            <td class="par">4</td>
+                            <td class="par">4</td>
+                            <td class="par">3</td>
+                            <td class="double-bogey">6</td>
+                            <td class="eagle">2</td>
+                            <td class="birdie">2</td>
+                            <td class="par">4</td>
+                            <td class="birdie">3</td>
+                            <td class="par">31</td>
+                            <td class="par">4</td>
+                            <td class="bogey">5</td>
+                            <td class="birdie">4</td>
+                            <td class="par">3</td>
+                            <td class="bogey">5</td>
+                            <td class="par">5</td>
+                            <td class="bogey">5</td>
+                            <td class="par">3</td>
+                            <td class="par">4</td>
+                            <td class="par">38</td>
+                            <td class="par">0</td>
+                            <td class="par">69</td>
+                            <td class="par">69</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="inner-wrap footer-wrap">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <h3>전화</h3>
+                    <span>02-599-0707</span>
+                </div>
+                <div class="footer-item">
+                    <h3>이메일</h3>
+                    <span>kmagf0707@naver.com</span>
+                </div>
+                <div class="footer-item">
+                    <h3>사무실 위치</h3>
+                    <span>서초구 논현로 삼호물산빌딩 B동 1609호</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3 style="margin-bottom: 0">KMAGF</h3>
+                <ul class="footer-media-list">
+                    <li><a class="sns-youtube" href="#"></a></li>
+                    <li><a class="sns-facebook" href="#"></a></li>
+                    <li><a class="sns-kakaostory" href="#"></a></li>
+                    <li><a class="sns-instagram" href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

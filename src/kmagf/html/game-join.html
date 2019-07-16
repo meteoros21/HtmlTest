@@ -54,6 +54,18 @@
             height: 40px;
         }
 
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
     </style>
 </head>
 <body>
@@ -85,9 +97,9 @@
         </ul>
         <div class="submenu-container">
             <ul class="navi">
-                <li class="active"><a href="#">2019 대회정보</a></li>
+                <li class="active"><a href="game-list.html">2019 대회정보</a></li>
                 <li><a href="#">지난 대회정보</a></li>
-                <li><a href="#">아마추어 랭킹</a></li>
+                <li><a href="ranking.html">아마추어 랭킹</a></li>
             </ul>
         </div>
     </div>
@@ -98,9 +110,9 @@
             <div class="current-page-name">2019년 대회</div>
             <div class="page-menu"><a href="game-summary.html">대회</a></div>
             <div class="page-menu"><a href="game-guide.html">대회요강</a></div>
-            <div class="page-menu">일정,장소 및 조편성</div>
+            <div class="page-menu"><a href="game-schedule.html">일정,장소 및 조편성</a></div>
             <div class="page-menu active"><a href="game-join.html">참가신청</a></div>
-            <div class="page-menu">경기결과</div>
+            <div class="page-menu"><a href="game-result.html">경기결과</a></div>
             <div class="page-menu"><a href="game-award.html">시상내역</a></div>
         </div>
         <div class="right-area">
@@ -111,9 +123,49 @@
                     <!--<span class="small-tag active">진행중</span>-->
                     <img src="../images/sub/player_logo_bridgestonegolf.png">
                     <span style="font-size: 1.3rem; letter-spacing: -2px">제 6회 브리지스톤골프배 미드아마 최강전 WITH 골프존</span>
-                    <div>제6회 브리지스톤골프배 미드아마 최강전 WITH골프존(충청, 전라, 제주)2016.05.02천룡CC</div>
+<!--                    <div>제6회 브리지스톤골프배 미드아마 최강전 WITH골프존(충청, 전라, 제주)2016.05.02천룡CC</div>-->
+                </div>
+                <div style="margin-bottom: 30px; padding: 10px 5px">
+                    <p>* 참가신청은 정회원 이상만 가능합니다.</p>
+
+                    <p>* 참가신청 완료는 선착순이며, 참가신청과 참가비 납부까지 완료되어야 참가신청이 최종완료 됨을 알려드립니다.</p>
+
+                    <p>* 대회별 입금계좌가 다르오니, 입금시 주의 부탁드립니다.</p>
+
+                    <p>* 벤제프 클럽 챔피언십 입금계좌: 기업은행 02-589-0709-0 / 예금주: 한국실업(미드아마)골프연맹</p>
+
+                    <p>* 예선 참가비: 230,000원 (그린피 + 카트이용료 + 참가비 포함), 캐디피 별도</p>
+
+                    <p>※ 참가신청 오픈 시간은 공지일 오전 10:00 입니다.</p>
                 </div>
                 <div style="margin-bottom: 50px">
+                    <div style="width: 100%; text-align: right">2019년도</div>
+                    <table class="table-game-list" style="width: 100%;">
+                        <tr>
+                            <th>신청기간</th>
+                            <th>대회명</th>
+                            <th>장소</th>
+                            <th>참가신청</th>
+                        </tr>
+                        <tr>
+                            <td>05/10 ~ 05/20</td>
+                            <td>제5회 벤제프 클럽챔피언십(예선)</td>
+                            <td>천룡CC</td>
+                            <td><button class="button">참가신청</button></td>
+                        </tr>
+                        <tr>
+                            <td>05/10 ~ 05/20</td>
+                            <td>제5회 벤제프 클럽챔피언십(예선)</td>
+                            <td>천룡CC</td>
+                            <td>참가신청</td>
+                        </tr>
+                        <tr>
+                            <td>05/10 ~ 05/20</td>
+                            <td>제5회 벤제프 클럽챔피언십(예선)</td>
+                            <td>천룡CC</td>
+                            <td>참가신청</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

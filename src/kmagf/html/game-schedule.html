@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미드아마추어골프연맹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="../css/common.css?v=0.1" rel="stylesheet">
+    <style>
+        .small-tag {
+            display: inline-block;
+            width: 65px;
+            height: 24px;
+            line-height: 24px;
+            margin: 0 10px 3px 0;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 3px;
+            color: white; background-color: #707070
+        }
+        .small-tag.active {
+            color: white; background-color: #50a232
+        }
+        .game-row2 {
+            position: relative;
+            padding: 20px 0 20px 0;
+            cursor: pointer;
+        }
+        .game-row2 span, img {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+        .game-row2 div {
+            margin: 10px 0 10px 10px;
+            font-size: 1.0rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        .table-summary {
+            margin-bottom: 50px;
+        }
+        .table-summary .cell {
+            padding: 20px 0;
+        }
+        .table-summary .cell img {
+            margin: 5px 2px;
+        }
+        .sub-logo {
+            background: url(../images/common/logo_sub.png) no-repeat;
+            background-size: 112px auto;
+            width: 142px;
+            height: 40px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        .table-group {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 2px solid #c2c2c2;
+            border-bottom: 2px solid #c2c2c2;
+        }
+
+        .table-group th,td {
+            padding: 7px;
+            text-align: center;
+            font-size: 1.0rem;
+            white-space: nowrap;
+            letter-spacing: -1px;
+        }
+
+        .table-group th {
+            border-bottom: 1px solid #c2c2c2;
+        }
+        .table-group td {
+            border-bottom: 1px dotted #c2c2c2;
+        }
+
+        .table-course {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 2px solid #c2c2c2;
+            border-bottom: 2px solid #c2c2c2;
+        }
+
+        .table-course.bg-blue th {
+            background-color: #edf3fb;
+        }
+        .table-course.bg-red th {
+            background-color: peachpuff;
+        }
+
+        .table-course th,td {
+            padding: 7px;
+            text-align: center;
+            font-size: 1.0rem;
+            white-space: nowrap;
+            letter-spacing: -1px;
+        }
+
+        .table-course th {
+            border-bottom: 1px solid #c2c2c2;
+        }
+        .table-course td {
+            border-bottom: 1px dotted #c2c2c2;
+        }
+    </style>
+</head>
+<body>
+<div class="top-margin"></div>
+<div class="top-menu-section">
+    <div class="top-menu-wrap inner-wrap">
+        <div class="logo"></div>
+        <ul class="navi main-navi">
+            <li><a href="#">연맹소개</a></li>
+            <li><a href="#">대회정보</a></li>
+            <li><a href="#">자료실</a></li>
+            <li><a href="#">후원</a></li>
+            <li><a href="#">게시판</a></li>
+            <li><a href="#">SHOP</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner-section">
+    <div class="inner-wrap banner-wrap">
+        <h1>대회정보</h1>
+        <h3>Tournament information</h3>
+    </div>
+</div>
+<div class="submenu-section">
+    <div class="inner-wrap submenu-wrap">
+        <ul class="navi-path">
+            <li><a href="/">&nbsp;</a></li>
+            <li>일정,장소 및 조편성</li>
+        </ul>
+        <div class="submenu-container">
+            <ul class="navi">
+                <li class="active"><a href="game-list.html">2019 대회정보</a></li>
+                <li><a href="#">지난 대회정보</a></li>
+                <li><a href="ranking.html">아마추어 랭킹</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="content-wrap inner-wrap">
+        <div class="left-area">
+            <div class="current-page-name">2019년 대회</div>
+            <div class="page-menu"><a href="game-summary.html">대회</a></div>
+            <div class="page-menu"><a href="game-guide.html">대회요강</a></div>
+            <div class="page-menu active"><a href="game-schedule.html">일정,장소 및 조편성</a></div>
+            <div class="page-menu"><a href="game-join.html">참가신청</a></div>
+            <div class="page-menu"><a href="game-result.html">경기결과</a></div>
+            <div class="page-menu"><a href="game-award.html">시상내역</a></div>
+        </div>
+        <div class="right-area">
+            <div class="title">일정, 장소 및 조편성</div>
+            <hr style="border-top: 1px solid #cccccc"/>
+            <div class="sub-game-links">
+                <a class="active" href="game-result.html?gameId=1">예선</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">16강 A그룹</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">16강 B그룹</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">8강</a>
+                <span>|</span>
+                <a href="game-result.html?gameId=1">4강, 결승</a>
+            </div>
+
+            <div class="body">
+                <div class="game-row2">
+                    <!--<span class="small-tag active">진행중</span>-->
+                    <img src="../images/sub/player_logo_bridgestonegolf.png">
+                    <span style="font-size: 1.3rem; letter-spacing: -2px">제 6회 브리지스톤골프배 미드아마 최강전 WITH 골프존</span>
+                    <div>제 5회 벤제프 클럽챔피언십 (예선): 2016.05.02 / 천룡CC</div>
+                    <div>Total PAR: 72, Distance: 5,998m</div>
+                </div>
+
+                <div style="margin-bottom: 50px">
+                    <div class="subtitle">Out Course(청룡)</div>
+                    <table class="table-course bg-blue" style="width: 100%;">
+                        <tr>
+                            <th>Hole</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>Out</th>
+                        </tr>
+                        <tr>
+                            <td>PAR</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>Distance</td>
+                            <td>440</td>
+                            <td>345</td>
+                            <td>350</td>
+                            <td>164</td>
+                            <td>335</td>
+                            <td>469</td>
+                            <td>148</td>
+                            <td>350</td>
+                            <td>365</td>
+                            <td>2,966</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="margin-bottom: 50px">
+                    <div class="subtitle">Group Members</div>
+                    <table class="table-group" style="width: 100%">
+                        <tr>
+                            <th>조</th>
+                            <th>TEE-OFF</th>
+                            <th colspan="4">Players</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10:44</td>
+                            <td style="width: 20%">강권오(태광)</td>
+                            <td style="width: 20%">권병협(레이크힐스용인)</td>
+                            <td style="width: 20%">유상환(선산)</td>
+                            <td style="width: 20%">석봉환(장수)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10:52</td>
+                            <td>김근호(유성)</td>
+                            <td>김태현(동훈힐마루)</td>
+                            <td>한종호(몽베르)</td>
+                            <td>진병권(에이원)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11:00</td>
+                            <td>원용현(부곡)</td>
+                            <td>박봉석(떼제베)</td>
+                            <td>이대희(경주신라)</td>
+                            <td>박진환(로얄포레)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11:08</td>
+                            <td>권오율(탑블리스)</td>
+                            <td>김원주(오펠)</td>
+                            <td>배창규(대구)</td>
+                            <td>문종열(필로스)</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10:44</td>
+                            <td style="width: 20%">강권오(태광)</td>
+                            <td style="width: 20%">권병협(레이크힐스용인)</td>
+                            <td style="width: 20%">유상환(선산)</td>
+                            <td style="width: 20%">석봉환(장수)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10:52</td>
+                            <td>김근호(유성)</td>
+                            <td>김태현(동훈힐마루)</td>
+                            <td>한종호(몽베르)</td>
+                            <td>진병권(에이원)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11:00</td>
+                            <td>원용현(부곡)</td>
+                            <td>박봉석(떼제베)</td>
+                            <td>이대희(경주신라)</td>
+                            <td>박진환(로얄포레)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11:08</td>
+                            <td>권오율(탑블리스)</td>
+                            <td>김원주(오펠)</td>
+                            <td>배창규(대구)</td>
+                            <td>문종열(필로스)</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10:44</td>
+                            <td style="width: 20%">강권오(태광)</td>
+                            <td style="width: 20%">권병협(레이크힐스용인)</td>
+                            <td style="width: 20%">유상환(선산)</td>
+                            <td style="width: 20%">석봉환(장수)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10:52</td>
+                            <td>김근호(유성)</td>
+                            <td>김태현(동훈힐마루)</td>
+                            <td>한종호(몽베르)</td>
+                            <td>진병권(에이원)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11:00</td>
+                            <td>원용현(부곡)</td>
+                            <td>박봉석(떼제베)</td>
+                            <td>이대희(경주신라)</td>
+                            <td>박진환(로얄포레)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11:08</td>
+                            <td>권오율(탑블리스)</td>
+                            <td>김원주(오펠)</td>
+                            <td>배창규(대구)</td>
+                            <td>문종열(필로스)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div style="margin-bottom: 50px">
+                    <div class="subtitle">Out Course(흑룡)</div>
+                    <table class="table-course bg-red">
+                        <tr>
+                            <th>Hole</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>Out</th>
+                        </tr>
+                        <tr>
+                            <td>PAR</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>Distance</td>
+                            <td>440</td>
+                            <td>345</td>
+                            <td>350</td>
+                            <td>164</td>
+                            <td>335</td>
+                            <td>469</td>
+                            <td>148</td>
+                            <td>350</td>
+                            <td>365</td>
+                            <td>2,966</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="margin-bottom: 50px">
+                    <div class="subtitle">Group Members</div>
+                    <table class="table-group" style="width: 100%">
+                        <tr>
+                            <th>조</th>
+                            <th>TEE-OFF</th>
+                            <th colspan="4">Players</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10:44</td>
+                            <td style="width: 20%">강권오(태광)</td>
+                            <td style="width: 20%">권병협(레이크힐스용인)</td>
+                            <td style="width: 20%">유상환(선산)</td>
+                            <td style="width: 20%">석봉환(장수)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10:52</td>
+                            <td>김근호(유성)</td>
+                            <td>김태현(동훈힐마루)</td>
+                            <td>한종호(몽베르)</td>
+                            <td>진병권(에이원)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11:00</td>
+                            <td>원용현(부곡)</td>
+                            <td>박봉석(떼제베)</td>
+                            <td>이대희(경주신라)</td>
+                            <td>박진환(로얄포레)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11:08</td>
+                            <td>권오율(탑블리스)</td>
+                            <td>김원주(오펠)</td>
+                            <td>배창규(대구)</td>
+                            <td>문종열(필로스)</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10:44</td>
+                            <td style="width: 20%">강권오(태광)</td>
+                            <td style="width: 20%">권병협(레이크힐스용인)</td>
+                            <td style="width: 20%">유상환(선산)</td>
+                            <td style="width: 20%">석봉환(장수)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10:52</td>
+                            <td>김근호(유성)</td>
+                            <td>김태현(동훈힐마루)</td>
+                            <td>한종호(몽베르)</td>
+                            <td>진병권(에이원)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11:00</td>
+                            <td>원용현(부곡)</td>
+                            <td>박봉석(떼제베)</td>
+                            <td>이대희(경주신라)</td>
+                            <td>박진환(로얄포레)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11:08</td>
+                            <td>권오율(탑블리스)</td>
+                            <td>김원주(오펠)</td>
+                            <td>배창규(대구)</td>
+                            <td>문종열(필로스)</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10:44</td>
+                            <td style="width: 20%">강권오(태광)</td>
+                            <td style="width: 20%">권병협(레이크힐스용인)</td>
+                            <td style="width: 20%">유상환(선산)</td>
+                            <td style="width: 20%">석봉환(장수)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10:52</td>
+                            <td>김근호(유성)</td>
+                            <td>김태현(동훈힐마루)</td>
+                            <td>한종호(몽베르)</td>
+                            <td>진병권(에이원)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11:00</td>
+                            <td>원용현(부곡)</td>
+                            <td>박봉석(떼제베)</td>
+                            <td>이대희(경주신라)</td>
+                            <td>박진환(로얄포레)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11:08</td>
+                            <td>권오율(탑블리스)</td>
+                            <td>김원주(오펠)</td>
+                            <td>배창규(대구)</td>
+                            <td>문종열(필로스)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="inner-wrap footer-wrap">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <h3>전화</h3>
+                    <span>02-599-0707</span>
+                </div>
+                <div class="footer-item">
+                    <h3>이메일</h3>
+                    <span>kmagf0707@naver.com</span>
+                </div>
+                <div class="footer-item">
+                    <h3>사무실 위치</h3>
+                    <span>서초구 논현로 삼호물산빌딩 B동 1609호</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3 style="margin-bottom: 0">KMAGF</h3>
+                <ul class="footer-media-list">
+                    <li><a class="sns-youtube" href="#"></a></li>
+                    <li><a class="sns-facebook" href="#"></a></li>
+                    <li><a class="sns-kakaostory" href="#"></a></li>
+                    <li><a class="sns-instagram" href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

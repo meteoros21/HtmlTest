@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <title>미드아마추어골프연맹</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link href="../css/common.css?v=0.1" rel="stylesheet">
+    <link href="../css/common.css?v=0.2" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
     <style>
         .map {
             display: block;
@@ -36,13 +39,48 @@
             width: 65px;
             height: 24px;
             line-height: 24px;
-            margin: 0 10px 3px 0;
+            margin: 0 5px 3px 0;
             vertical-align: middle;
             text-align: center;
             font-size: 13px;
             font-weight: 600;
             border-radius: 3px;
+            color: white;
         }
+        .game-row {
+            vertical-align: middle;
+            white-space: nowrap;
+            border-bottom: 1px dotted #c2c2c2;
+            padding: 20px 0;
+            cursor: pointer;
+            background: url(../images/sub/ic_ar_circle.png) no-repeat right center;
+        }
+
+        .game-row div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .game-symbol {
+            margin: 0 5px;
+        }
+        .game-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #303f56;
+        }
+        .game-dscr {
+            display: block !important;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .game-ing {
+            background-color: #3ab54a;
+        }
+        .game-fin {
+            background-color: #707070;
+        }
+
     </style>
 </head>
 <body>
@@ -51,7 +89,7 @@
     <div class="top-menu-wrap inner-wrap">
         <div class="logo"></div>
         <ul class="navi main-navi">
-            <li><a href="#">연맹소개</a></li>
+            <li><a href="greeting.html">연맹소개</a></li>
             <li class="active"><a href="#">대회정보</a></li>
             <li><a href="#">자료실</a></li>
             <li><a href="#">후원</a></li>
@@ -90,7 +128,24 @@
             <div class="title">2019년 대회 정보</div>
             <hr style="border-top: 1px solid #cccccc"/>
             <div class="body">
-
+                <div class="game-row" data-id="1">
+                    <div class="small-tag game-ing">진행중</div>
+                    <div class="game-symbol"><img src="../images/sub/player_logo_benjefe.png"></div>
+                    <div class="game-name">제6회 브리지스톤골프배 미드아마 최강전 WITH골프존</div>
+                    <div class="game-dscr">제6회 브리지스톤골프배 미드아마 최강전 WITH골프존(충청, 전라, 제주) | 2016.05.02 | 천룡CC</div>
+                </div>
+                <div class="game-row" data-id="2">
+                    <div class="small-tag game-ing">진행중</div>
+                    <div class="game-symbol"><img src="../images/sub/player_logo_benjefe.png"></div>
+                    <div class="game-name">제6회 브리지스톤골프배 미드아마 최강전 WITH골프존</div>
+                    <div class="game-dscr">제6회 브리지스톤골프배 미드아마 최강전 WITH골프존(충청, 전라, 제주) | 2016.05.02 | 천룡CC</div>
+                </div>
+                <div class="game-row" data-id="3">
+                    <div class="small-tag game-fin">진행중</div>
+                    <div class="game-symbol"><img src="../images/sub/player_logo_benjefe.png"></div>
+                    <div class="game-name">제6회 브리지스톤골프배 미드아마 최강전 WITH골프존</div>
+                    <div class="game-dscr">제6회 브리지스톤골프배 미드아마 최강전 WITH골프존(충청, 전라, 제주) | 2016.05.02 | 천룡CC</div>
+                </div>
             </div>
         </div>
     </div>
@@ -122,5 +177,12 @@
         </div>
     </div>
 </div>
+<script>
+    $('.game-row').click(function (e) {
+        var gameId = $(this).attr('data-id');
+        alert(gameId);
+        window.location.href = 'game-summary.html?gameId=' + gameId;
+    });
+</script>
 </body>
 </html>
