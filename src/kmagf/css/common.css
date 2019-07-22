@@ -1,4 +1,4 @@
-@import url('http://fonts.googleapis.com/earlyaccess/nanumsquare.css');
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
 html, body {
     margin: 0;
@@ -6,6 +6,13 @@ html, body {
     box-sizing: border-box;
     line-height: 1.5;
 }
+* {
+    box-sizing: border-box;
+}
+div {
+    margin: 0;
+}
+
 ul, ol {
     list-style: none;
 }
@@ -33,7 +40,85 @@ a:link, a:visited, a:hover, a:active {
 }
 .text-center {
     text-align: center;
+}
+.text-middle {
     vertical-align: middle;
+}
+.text-left {
+    text-align: left;
+}
+.text-top {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.checkbox input[type=checkbox] {
+    display: none;
+}
+.checkbox label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 32px;
+    margin-right: 10px;
+}
+.checkbox label:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+}
+.checkbox label:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    /*position: absolute;*/
+    left: 0;
+    background: url(../images/common/check_box1.png) no-repeat left top;
+}
+.checkbox input[type=checkbox]:checked + label:before {
+    background: url(../images/common/check_box1.png) no-repeat right top;
+}
+
+.btn {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    background: none;
+    padding: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #00477e;
+}
+
+.btn-default {
+    color: white;
+    background-color: #00477e;
+}
+.btn-normal {
+    color: #00477e;
+    background-color: white;
+}
+.blind {
+    font-size: 0;
+    line-height: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    text-indent: -9999px;
+}
+.bg-dot {
+    background: url(../images/common/bg_cont.png) repeat;
 }
 
 .navi {
@@ -91,7 +176,6 @@ a:link, a:visited, a:hover, a:active {
     border-bottom: 4px solid #1e3a64
 }
 
-
 .top-margin {
     width: 100%;
     height: 0.2rem;
@@ -100,6 +184,7 @@ a:link, a:visited, a:hover, a:active {
 
 .top-menu-section {
     width: 100%;
+    background-color: #f8f8f9;
 }
 
 .top-menu-section .logo {
@@ -108,6 +193,53 @@ a:link, a:visited, a:hover, a:active {
     width: 200px;
     height: 42px;
     background: url('../images/common/logo_sub.png') no-repeat;
+}
+
+.login-box {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    white-space: nowrap;
+    background-color: #1e3a64;
+}
+
+.login-box .member {
+    display: inline-block;
+    background-color: #1e3a64;
+    color: white;
+    padding: 10px
+}
+.login-box .name-photo {
+    display: inline-block;
+    color: #1e3a64;
+    padding: 0 10px;
+    background-color: white
+}
+.login-box .name-photo .name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.login-box .name-photo .photo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 44px;
+    height: 44px;
+    background: url(../images/common/bg_member.png) no-repeat top 2px center;
+    background-size: 40px 40px;
+}
+
+.login-box .name-photo2 {
+    display: inline-block;
+    padding-right: 8px;
+}
+.login-box .name-photo2 .photo{
+    display: inline-block;
+    vertical-align: middle;
+    width: 44px;
+    height: 44px;
+    background: url(../images/common/bg_member.png) no-repeat top 2px center;
+    background-size: 40px 40px;
 }
 
 .top-menu-section .main-navi {
@@ -239,6 +371,23 @@ a:link, a:visited, a:hover, a:active {
     font-size: 1.1rem
 }
 
+.banner-1 {
+    background: url("../images/sub/img_subtop_01.png") repeat-x;
+}
+.banner-2 {
+    background: url("../images/sub/img_subtop_02.png") repeat-x;
+}
+.banner-3 {
+    background: url("../images/sub/img_subtop_03.png") repeat-x;
+}
+.banner-4 {
+    background: url("../images/sub/img_subtop_04.png") repeat-x;
+}
+.banner-5 {
+    background: url("../images/sub/img_subtop_05.png") repeat-x;
+}
+
+
 @media only screen and (max-width: 415px) {
 
 }
@@ -251,14 +400,16 @@ a:link, a:visited, a:hover, a:active {
         white-space: nowrap;
         margin: 0 auto 0 auto;
         width: 100%;
+        min-width: 768;
         box-sizing: border-box;
+        overflow: auto;
     }
     .navi li {
         display: inline-block;
         padding: 14px 15px;
     }
     .banner-section {
-        background: url(../images/sub/img_subtop_02.png) repeat-x;
+        /*background: url(../images/sub/img_subtop_02.png) repeat-x;*/
         height: 200px;
         color: white;
         background-size: auto 100%;
@@ -355,7 +506,7 @@ a:link, a:visited, a:hover, a:active {
         box-sizing: border-box;
     }
     .banner-section {
-        background: url(../images/sub/img_subtop_02.png) repeat-x;
+        /*background: url(../images/sub/img_subtop_02.png) repeat-x;*/
         height: 250px;
         color: white;
         background-size: auto 100%;

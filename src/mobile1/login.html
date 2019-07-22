@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            width: 100%;
+            height: 100%;
+        }
+        .gray-bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        @media (max-width: 768px)
+        {
+            .wrapper {
+                top: 0;
+                transform: none;
+            }
+            .gray-bg {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: white !important;
+            }
+        }
+        @media (min-width: 768px) {
+            html, body {
+                background-color: #494f54;
+            }
+            .my-wrapper {
+                margin: auto;
+                position: relative;
+                top:40%;
+                transform: translateY(-50%)
+            }
+            .gray-bg {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+        h5 {
+            margin: 10px 0 0 0;
+        }
+        /* 부모 div 높이가 0이면 다음과 같은 속성을 준다 */
+        .my-wrapper::after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+        /* 모바일 (768px보다 작은) */
+        @media (max-width: 768px)
+        {
+            .gray-bg {
+                background-color: white !important;
+            }
+        }
+        /* 작은 기기들 (태블릿, 768px - 992px) */
+        @media (min-width: 768px) and (max-width: 992px)
+        {
+            html, body {
+                font-size: 24px;
+            }
+        }
+        /* 중간 기기들 (테스크탑, 992px - 1200px) */
+        @media (min-width: 992px) and (max-width: 1200px)
+        {
+        }
+        /* 큰 기기들 (큰 데스크탑, 1200px 이상) */
+        @media (min-width: 1200px)
+        {
+        }
+    </style>
+</head>
+<body class="gray-bg">
+<div class="container-fluid" style="padding: 0; margin: 0">
+    <div style="width: 100%; height: 100%; position: absolute; padding: 0; margin: 0">
+        <div class="my-wrapper" style="max-width: 800px; ">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3" style="background-color: white;">
+                <div class="col-xs-12" style="text-align: center">
+                    <h3 class="text-center" style="padding: 30px 15px">Welcome to Tamm Sports Management System</h3>
+                </div>
+                <form id="userLoginForm" method="post" action="/login/process" style="padding: 30px 15px;">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" class="form-control" name="memberId" id="email" placeholder="E-Mail" required minlength="4">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="memberPwd" id="password" placeholder="Password" required minlength="4">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input name="remember" type="checkbox" value="Y"  >Remember Me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" >SingIn</button>
+
+                    <div class="row">
+                        <div class="col-xs-6" style="margin-top: 10px">
+                            <a href="#"><small>Forgot password?</small></a>
+                        </div>
+                        <div class="col-xs-6" style="margin-top: 10px">
+                            <a href="javascript:jumpJoinForm()"><small>Create new account</small></a>
+                        </div>
+                        <div class="col-xs-12 text-center" style="margin-top: 10px">
+                            or sign-in with follow SNS
+                        </div>
+                        <div class="col-xs-12 text-center" style="margin-top: 5px">
+                            <div id="naverIdLogin"><img id="icon-naver" src="https://static.nid.naver.com/oauth/button_g.PNG?version=js-2.0.0" height="30"></div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+                <div class="col-xs-12 text-center" style="padding: 30px 15px;">
+                    <p style="font-size: 0.7rem">Copyright &copy; I-ON Communications Corp. &copy; 1997-2017</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

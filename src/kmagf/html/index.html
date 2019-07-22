@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미드아마추어골프연맹</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="../css/common.css?v=0.2" rel="stylesheet">
+    <link href="../slick/slick.css" rel="stylesheet"/>
+    <!--<link href="../slick/slick-theme.css" rel="stylesheet"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>-->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick/slick.min.js"></script>
+    <script src="../js/mainslider.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../slick/slick.js"></script>
+    <style>
+        .top-section {
+            z-index: -1;
+            width: 100%;
+            height: 70vw;
+            max-height: 800px;
+            background: url(../images/main/bg_maintop_line.png) repeat-x;
+        }
+        .top-section .bg {
+            width: 100%;
+            height: 100%;
+            background: url(../images/main/bg_maintop.png) no-repeat center top;
+            margin: 0 auto;
+        }
+        .top-section .logo {
+            display: inline-block;
+            vertical-align: middle;
+            width: 200px;
+            height: 42px;
+            background: url('../images/common/logo_sub.png') no-repeat;
+        }
+        .main-navi li a {
+            color: white !important;
+        }
+        .top-menu-wrap .logo {
+            background: url(../images/common/logo.png) no-repeat !important;
+        }
+
+        .slider-section .slider-wrap {
+            width: 100%;
+            max-width: 1150px;
+            margin: 0 auto
+        }
+        #mainTopSlider img {
+            width: 100%;
+        }
+        .slick-dots { position:absolute; bottom:76px; left:50%; margin-left:-110px; }
+        .slick-dots li { display:inline-block; }
+        .slick-dots li button { margin:0 4px !important; text-indent:-9999px; width:45px; height:15px !important; background:#1e1f1d; }
+        .slick-dots li.slick-active button { background:#fff; height: 15px !important; text-indent:-9999px; width:45px;}
+
+        .box-section {
+            position: absolute;
+            top:690px;
+            width: 100%;
+        }
+
+        .game-section {
+            width: 100%;
+            border-bottom: 1px solid #d2d2d2;
+            padding-top: 180px
+        }
+        .game-section .more {
+            float: right;
+            width: 110px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color:#365687;
+            border: 1px solid #365687;
+            background-color: white;
+            text-align: center
+        }
+        .game-section .ic-ar {
+            display: inline-block;
+            width: 7px;
+            height: 11px;
+            margin: 0 0 2px 10px;
+            vertical-align: middle;
+            background: url(../images/common/ic_ar.png) no-repeat;
+        }
+        .title-set {
+
+        }
+        .title-set h2 {
+            display: inline-block;
+            margin: 0;
+            position: relative;
+            padding-bottom: 5px;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+            line-height: 1.5;
+            color: #787878;
+        }
+        .title-set h2::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: -1000px;
+            right: 200px;
+            height: 1px;
+            background: #365687;
+        }
+        .title-set-title {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #214172;
+            border-bottom: 5px solid #365687
+        }
+        .title-set p {
+            margin-top: 22px;
+            font-size: 1.3rem;
+            color: #6a7d9c;
+            letter-spacing: -0.5px;
+        }
+
+        .tabs-section {
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px solid #d2d2d2;
+            padding-bottom: 50px;
+        }
+        .tabs-section h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #214172;
+            letter-spacing: -0.5px;
+        }
+
+        .tabs-ui {
+            list-style: none;
+            text-align: center;
+            vertical-align: top;
+            width: 100%;
+        }
+
+        .tabs-ui li {
+            display: inline-block;
+            margin: 0 30px;
+        }
+
+        .shortcut-icons .tabs-ui li a {
+            display: inline-block;
+            width: 130px;
+            height: 130px;
+        }
+
+        .shortcut-icons .tabs-ui li.active a {
+            background-position-x: -130px;
+        }
+        .shortcut-icons .tabs-ui a:hover {
+            background-position-x: -130px;
+        }
+        .tabs-ui .icon-game {
+            background: url(../images/main/tab_maincont.png) no-repeat;
+        }
+        .tabs-ui .icon-news {
+            background: url(../images/main/tab_maincont.png) no-repeat 0 -130px;
+        }
+        .tabs-ui .icon-board {
+            background: url(../images/main/tab_maincont.png) no-repeat 0 -260px;
+        }
+        .tabs-ui .icon-rule {
+            background: url(../images/main/tab_maincont.png) no-repeat 0 -390px;
+        }
+        .tabs-ui .icon-join {
+            background: url(../images/main/tab_maincont.png) no-repeat 0 -520px;
+        }
+
+        .tabs-cont-wrap {
+            display: table-cell;
+            vertical-align: top;
+            width: 70%
+        }
+
+        .tabs-section .tabs-ui {
+            margin: 32px 0;
+        }
+        .tabs-section .tabs-ui.subtab {
+            margin: 20px 0;
+            padding: 8px 0;
+            text-align: left;
+            border-bottom: 2px solid #ccdae5;
+        }
+
+        .tabs-section .tabs-ui.subtab li {
+            margin: 0 100px 0 0;
+        }
+        .tabs-section .tabs-ui.subtab li a {
+            padding: 9px 5px;
+            font-size: 1.6rem;
+            color: #214172;
+            width: auto;
+            height: 20px;
+        }
+        .tabs-section .tabs-ui.subtab li.active a {
+            font-weight: 700;
+            border-bottom: 6px solid #214172;
+        }
+        .tabs-cont .cont {
+            display: none;
+        }
+
+        .tabs-section .list-type1 {
+            padding: 0;
+        }
+        .tabs-section .list-type1 li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .tabs-section .list-type1 li a {
+            display: block;
+        }
+        .tabs-section .list-type1 li .t1 {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #232323;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tabs-section .list-type1 li .t2 {
+            display: block;
+            color: #4175c4;
+        }
+        .tabs-section .list-type1 li .date {
+            color: #666;
+        }
+        .tabs-section .btn-wrap {
+            margin-top: 50px;
+        }
+
+        .tabs-section .tabs-cont a.more {
+            display: inline-block;
+            width: 160px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #365687;
+            border: 1px solid #365687;
+            background-color: white;
+        }
+
+        .rank-wrap {
+            display: table-cell; vertical-align: top
+        }
+        .rank-wrap a.more {
+            width: 84px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 21px;
+            font-weight: 700;
+            text-align: center;
+            color: #365687;
+            border: 1px solid #365687;
+            background-color: white;
+            display: inline-block;
+        }
+
+        .rank-wrap .rank {
+            width: 100%;
+        }
+        .rank-wrap .rank .rank-no {
+            font-size: 1.4rem;
+            color: #1e3462;
+            font-weight: 700;
+            display: inline-block;
+            width: 24px;
+        }
+        .rank-wrap .rank .user-name {
+            font-size: 1.6rem;
+            color: #1e3462;
+            font-weight: 700;
+        }
+        .rank-wrap .rank .rank-point {
+            display: inline-block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1ab712;
+            border-bottom: 1px solid #1ab712;
+            margin-left: 24px;
+            padding: 0;
+        }
+        .rank-wrap .rank .photo {
+            padding: 6px 10px;
+        }
+        .rank-wrap .rank .rank-info-wrap {
+            padding: 6px 30px;
+            text-align: right;
+            width: 100%;
+        }
+        .rank-wrap .rank .photo a {
+            width: 87px;
+            height: 87px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            background: url(../images/common/bg_per.png) no-repeat;
+        }
+
+        .gallery-section .tabs-ui {
+            margin: 50px 488px 40px 0;
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .gallery-section .tabs-ui li {
+            margin: 0;
+        }
+        .gallery-section .tabs-ui li + li {
+            margin-left: 120px;
+        }
+        .gallery-section .tabs-ui li.active a {
+            background-position: 0 0 !important;
+        }
+
+        .gallery-section .tabs-ui li a.tab-list1 {
+            display: inline-block;
+            width: 130px;
+            height: 26px;
+            background: url(../images/main/tab_gal_photo.png) no-repeat 0 -45px;
+        }
+        .gallery-section .tabs-ui li a.tab-list2 {
+            display: inline-block;
+            width: 180px;
+            height: 26px;
+            background: url(../images/main/tab_gal_instagram.png) no-repeat 0 -45px;
+        }
+
+        .gallery-section .tabs-ui li a.tab-list3 {
+            display: inline-block;
+            width: 152px;
+            height: 26px;
+            background: url(../images/main/tab_gal_youtube.png) no-repeat 0 -45px;
+        }
+
+        .gallery-section .btn-wrap {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .gallery-section a.more {
+            display: inline-block;
+            width: 166px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 21px;
+            font-weight: 700;
+            text-align: center;
+            color: #365687;
+            border: 1px solid #365687;
+            background-color: white;
+        }
+
+        .gallery-section .tabs-cont ul {
+            display: inline-block;
+        }
+        .gallery-section .tabs-cont ul li {
+            float: left;
+            width: 25%;
+            padding: 0 1px;
+            background-color: white;
+        }
+        .gallery-section .tabs-cont ul li:first-child {
+            padding-left: 2px;
+        }
+        .gallery-section .tabs-cont ul li img {
+            width: 100%;
+        }
+        .gallery-section .tabs-cont ul li a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .gallery-section .tabs-cont ul li a .txt {
+            display: none;
+        }
+        .gallery-section .tabs-cont ul li a:hover .txt {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 20px;
+            font-size: 1.0rem;
+            text-align: left;
+            color: white;
+            background-color: black;
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top-section">
+    <div class="bg" style="padding-top: 2rem">
+        <div class="top-menu-wrap inner-wrap">
+            <div class="logo"></div>
+            <ul class="navi main-navi">
+                <li><a href="#">연맹소개</a></li>
+                <li><a href="game-list.html">대회정보</a></li>
+                <li><a href="member-announce.html">자료실</a></li>
+                <li><a href="donation.html">후원</a></li>
+                <li><a href="notice.html">게시판</a></li>
+                <li><a href="#">SHOP</a></li>
+            </ul>
+        </div>
+
+        <div class="slider-section" style="width: 100%; margin-top: 30px">
+            <div class="slider-wrap" style="">
+                <div style="width: 100%" id="mainTopSlider">
+                    <div>
+                        <img src="../images/main/main_slider_01.png" alt="아마추어 골퍼들의 실력 발전을 위한 기회 제공 - 한국아마추어미드골프연맹은 순수 아마추어골퍼들의 실력을 겨를 수 있는 장을 마련하고 있습니다.">
+                    </div>
+                    <div>
+                        <img src="../images/main/main_slider_02.png" alt="미드아마추어 골프대회를 통한 아마추어 랭킹 산출 - 아마추어골퍼들간 경기 실력을 투명한 결과에 따른 신뢰를 바탕으로 순위를 산출 합니다.">
+                    </div>
+                    <div>
+                        <img src="../images/main/main_slider_03.png" alt="아마추어 골프 발전을 위한 다양한 활동 진행 - 골프 플레이 및 경기 규칙을 빠르게 전달하고 아마추어골퍼들간의 친목도모와 같은 상호적 소통을 합니다.">
+                    </div>
+                    <div>
+                        <img src="../images/main/main_slider_04.png" alt="꿈나무 주니어 골퍼 발굴 지원활동 - 한국 아마추어미드 골프연맹은 꾸준히 주니어골프활동을 적극적으로 지원해오고 있습니다.">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- floating center box -->
+<div class="box-section">
+    <div class="inner-wrap">
+        <div style="display: table; width: 100%;">
+            <div style="display: table-row">
+                <div style="display: table-cell; width: 50%; background-color: white; padding: 10px 30px; position: relative">
+                    <h1>2019년 미드아마 전체경기 일정</h1>
+                    <p style="color: #6785b4; font-size: 1.2rem">미드아마 경기는 정회원 가입 후<br/>참여신청이 가능합니다.</p>
+                    <div style="margin-bottom: 30px">
+                        <div style="border: 1px solid #6aa9e2; color: #365687; padding: 10px 0; font-size: 1.2rem; width: 140px; display: inline-block; text-align: center; margin-right: 10px">일정보기</div>
+                        <div style="border: 1px solid #6aa9e2; color: #365687; padding: 10px 0; font-size: 1.2rem; width: 140px; display: inline-block; text-align: center">정회원가입</div>
+                    </div>
+                    <div style="position: absolute; bottom: 0; right: 20px; width: 120px; height: 102px; background: url(../images/main/bg_box_link_01.png) no-repeat"></div>
+                </div>
+                <div style="display: table-cell; width: 50%; background-color: #365687; padding: 10px 30px; position: relative">
+                    <h1 style="color: white">골프 플레이 규칙</h1>
+                    <p style="color: white; font-size: 1.2rem">꼭 지켜야 하는 골프 플레이 규칙의 이해와 변동사항을<br/>
+                        알려드립니다.</p>
+                    <div style="margin-bottom: 30px">
+                        <div style="border: 1px solid #7d90ae; color: #fff; padding: 10px 0; font-size: 1.2rem; width: 140px; display: inline-block; text-align: center; margin-right: 10px">자세히보기</div>
+                    </div>
+                    <div style="position: absolute; bottom: 0; right: 20px; width: 110px; height: 110px; background: url(../images/main/bg_box_link_02.png) no-repeat"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="game-section bg-dot">
+    <div style="width: 100%; background: url(../images/main/bg_maincon.png) no-repeat 900px bottom">
+        <div class="inner-wrap">
+            <div style="">
+                <div style="width: 570px; white-space: nowrap">
+                    <h2 style="display: inline-block; font-size: 2rem; font-weight: 800; color: #1ab712">2019년 대회 일정</h2>
+                    <a class="more">
+                        전체<i class="ic-ar"></i> </a>
+                </div>
+                <div style="display: table; font-size: 1.6rem; font-weight: 400">
+                    <div style="display: table-row">
+                        <div style="display: table-cell; padding: 5px 20px 0 10px; text-align: center; vertical-align: middle">
+                            <img src="../images/main/img_comp_01.png">
+                        </div>
+                        <div style="display: table-cell; padding: 5px 20px 0 10px; vertical-align: middle; color: #365687; letter-spacing: -0.5px">
+                            <div style="border-bottom: 1px solid #365687">제 9회 Volvik 코리아 아마추어 최강전</div>
+                        </div>
+                    </div>
+                    <div style="display: table-row">
+                        <div style="display: table-cell; padding: 5px 20px 0 10px; text-align: center; font-weight: 700">
+                            <span style="color: #1bb115">대회 준비중</span>
+                        </div>
+                        <div style="display: table-cell; padding: 5px 20px 0 10px; color: #587961">
+                            <span>장소</span> <span style="font-weight: 800">한맥CC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title-set" style="margin: 100px 0">
+                <h2>한국미드아마추어 골프연맹<br/>
+                    <span class="title-set-title" style="">KMAGF MISSION</span></h2>
+                <p>아마추어 정신에 입각하여 등록단체 및 선수상호간의 자치적인 활동을 통해 친목을 도모하고<br/>
+                    국민체위향상과 골프경기의 건전한 발전 및 올바른 골프문화 정착을 위해 기여하며<br/>
+                    주니어 골프의 육성을 목적으로 한다.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- tab -->
+<div class="tabs-section">
+    <div class="inner-wrap" style="">
+        <div class="shortcut-icons" style="background-color: white; white-space: nowrap">
+            <ul class="tabs-ui" style="list-style: none; text-align: center">
+                <li class="active"><a class="icon-game" href="#tab_main1">&nbsp;</a></li>
+                <li><a class="icon-news" href="#tab_main2">&nbsp;</a></li>
+                <li><a class="icon-board" href="#tab_main3">&nbsp;</a></li>
+                <li><a class="icon-rule" href="#tab_main4">&nbsp;</a></li>
+                <li><a class="icon-join" href="#tab_main5">&nbsp;</a></li>
+            </ul>
+        </div>
+
+        <div style="display: table; margin-top: 50px">
+            <div style="display: table-row">
+                <div class="tabs-cont tabs-cont-wrap" style="padding-right: 50px">
+                    <!-- 대회정보 탭 -->
+                    <div class="cont" id="tab_main1" style="display:block;">
+                        <h3>2019년 대회</h3>
+                        <ul class="tabs-ui subtab">
+                            <li class="active"><a href="#tab_main1_sub1">진행중</a></li>
+                            <li><a href="#tab_main1_sub2">준비중</a></li>
+                        </ul>
+                        <div class="tabs-cont">
+                            <div class="cont" id="tab_main1_sub1" style="display:block;">
+                                <h3 class="blind">진행중</h3>
+                                <ul class="list-type1">
+                                    <li>
+                                        <a href="#a">
+                                            <span class="t1">제6회 브리지스톤골프배 미드아마 최강전 WITH 골프존</span>
+                                            <span class="t2 mb10">천룡 CC</span>
+                                            <span class="date">2016.05.02</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#a">
+                                            <span class="t1">제5회 벤제프 골프챔피언십 예선</span>
+                                            <span class="t2 mb10">천룡 CC</span>
+                                            <span class="date">2016.05.02</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                            <div class="cont" id="tab_main1_sub2">
+                                <h3 class="blind">준비중</h3>
+                                <ul class="list-type1">
+                                    <li>
+                                        <a href="#a">
+                                            <span class="t1">제9회 Volvik 코리아 아마추어 최강전</span>
+                                            <span class="t2">준비중</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#a">
+                                            <span class="t1">KMAGF 2019 그린투어</span>
+                                            <span class="t2">준비중</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#a">
+                                            <span class="t1">제9회 Volvik 코리아 아마추어 최강전</span>
+                                            <span class="t2">준비중</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#a">
+                                            <span class="t1">KMAGF 2019 그린투어</span>
+                                            <span class="t2">준비중</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //대회정보 탭 -->
+
+                    <!-- 뉴스 탭 -->
+                    <div class="cont" id="tab_main2">
+                        <h3>NEWS &amp; UPDATES</h3>
+                        <ul class="tabs-ui subtab">
+                            <li class="active"><a href="#tab_main2_sub1">공지사항</a></li>
+                            <li><a href="#tab_main2_sub2">보도자료</a></li>
+                        </ul>
+                        <div class="tabs-cont">
+                            <div class="cont" id="tab_main2_sub1" style="display:block;">
+                                <h3 class="blind">공지사항</h3>
+                                공지사항
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                            <div class="cont" id="tab_main2_sub2">
+                                <h3 class="blind">보도자료</h3>
+                                보도자료
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //뉴스 탭 -->
+
+                    <!-- 게시판 탭 -->
+                    <div class="cont" id="tab_main3">
+                        <h3>COMMUNITY</h3>
+                        <ul class="tabs-ui subtab">
+                            <li class="active"><a href="#tab_main3_sub1">연맹소식</a></li>
+                            <li><a href="#tab_main3_sub2">동호회</a></li>
+                        </ul>
+                        <div class="tabs-cont">
+                            <div class="cont" id="tab_main3_sub1" style="display:block;">
+                                <h3 class="blind">연맹소식</h3>
+                                연맹소식
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                            <div class="cont" id="tab_main3_sub2">
+                                <h3 class="blind">동호회</h3>
+                                동호회
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">동호회 목록보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //게시판 탭 -->
+
+                    <!-- 규칙 탭 -->
+                    <div class="cont" id="tab_main4">
+                        <h3>GOLF RULE</h3>
+                        <ul class="tabs-ui subtab">
+                            <li class="active"><a href="#tab_main4_sub1">플레이규칙</a></li>
+                            <li><a href="#tab_main4_sub2">경기</a></li>
+                        </ul>
+                        <div class="tabs-cont">
+                            <div class="cont" id="tab_main4_sub1" style="display:block;">
+                                <h3 class="blind">플레이규칙</h3>
+                                플레이규칙
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                            <div class="cont" id="tab_main4_sub2">
+                                <h3 class="blind">경기</h3>
+                                경기
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">목록 전체보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //규칙 탭 -->
+
+                    <!-- 가입정보 탭 -->
+                    <div class="cont" id="tab_main5">
+                        <h3>JOIN A KMAGF</h3>
+                        <ul class="tabs-ui subtab">
+                            <li class="active"><a href="#tab_main5_sub1">가입안내</a></li>
+                            <li><a href="#tab_main5_sub2">정회원</a></li>
+                        </ul>
+                        <div class="tabs-cont">
+                            <div class="cont" id="tab_main5_sub1" style="display:block;">
+                                <h3 class="blind">가입안내</h3>
+                                가입안내
+                            </div>
+                            <div class="cont" id="tab_main5_sub2">
+                                <h3 class="blind">정회원</h3>
+                                정회원
+                                <div class="btn-wrap">
+                                    <a href="#a" class="more">전체 내용보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //가입정보 탭 -->
+                </div>
+
+                <!-- rank-wrap !-->
+                <div class="rank-wrap">
+                    <h3>KMA RANKING</h3>
+                    <div>2018년 한국미드아마추어골프연맹 아마랭킹</div>
+                    <table class="rank">
+                        <tr>
+                            <td style="width: 55%">
+                                <a class="refresh" href=""><span class="blind">Refresh</span></a>
+                                <div style="display: inline-block">총타점수</div>
+                            </td>
+                            <td class="rank-info-wrap" style="width: 45%;">
+                                <a class="more" href="#">전체</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="photo">
+                                <a href="#"><img src="../images/main/temp_per_01.png"></a>
+                            </td>
+                            <td class="rank-info-wrap">
+                                <div class="rank-info">
+                                    <span class="rank-no">1</span>
+                                    <span class="user-name">홍길동</span>
+                                </div>
+                                <div class="rank-point">1449 P</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="photo">
+                                <a href="#"><img src="../images/main/temp_per_02.png"></a>
+                            </td>
+                            <td class="rank-info-wrap">
+                                <div class="rank-info">
+                                    <span class="rank-no">2</span>
+                                    <span class="user-name">김순</span>
+                                </div>
+                                <div class="rank-point">1449 P</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="photo">
+                                <a href="#"><img src="../images/main/temp_per_03.png"></a>
+                            </td>
+                            <td class="rank-info-wrap">
+                                <div class="rank-info">
+                                    <span class="rank-no">3</span>
+                                    <span class="user-name">조희</span>
+                                </div>
+                                <div class="rank-point">1449 P</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="photo">
+                                <a href="#"><img src="../images/main/temp_per_04.png"></a>
+                            </td>
+                            <td class="rank-info-wrap">
+                                <div class="rank-info">
+                                    <span class="rank-no">4</span>
+                                    <span class="user-name">김순철</span>
+                                </div>
+                                <div class="rank-point">1449 P</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="photo">
+                                <a href="#"><img src=""></a>
+                            </td>
+                            <td class="rank-info-wrap">
+                                <div class="rank-info">
+                                    <span class="rank-no">5</span>
+                                    <span class="user-name">박희수</span>
+                                </div>
+                                <div class="rank-point">1449 P</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- rank-wrap !-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-section bg-dot" style="border-bottom: 1px solid #d2d2d2">
+    <div class="inner-wrap" style="padding: 50px 0">
+        <div class="title-set">
+            <h2>아마추어 골프대회 포토갤러리 & 영상<br/>
+                <span class="title-set-title" style="">GALLERY</span></h2>
+        </div>
+        <ul class="tabs-ui">
+            <li class="active">
+                <a href="#cont1_photo" class="tab-list1">
+                    <span class="blind">Photo</span>
+                </a>
+            </li>
+            <li>
+                <a href="#cont2_instagram" class="tab-list2">
+                    <span class="blind">Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="#cont3_youtube" class="tab-list3">
+                    <span class="blind">Youtube</span>
+                </a>
+            </li>
+        </ul>
+        <div class="tabs-cont">
+            <div class="cont" id="cont1_photo" style="display: block">
+                <h3 class="blind">Photo</h3>
+                <ul>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_01.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_02.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_03.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_04.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cont" id="cont2_instagram" style="display: none">
+                <h3 class="blind">Instagram</h3>
+                <ul>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_02.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_02.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_03.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_04.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cont" id="cont3_youtube" style="display: none">
+                <h3 class="blind">Youtube</h3>
+                <ul>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_03.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_02.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_03.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#a">
+                            <img src="../images/main/temp_gallery_photo_04.png">
+                            <span class="txt">제9회 KMAGF 회장배 미드아마<br/>챔피언십 시상식</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn-wrap">
+                <a href="#a" class="more">더보기</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sponsor-section" style="width: 100%; background-color: #f2f4f7">
+    <div class="inner-wrap" style="padding: 20px 0">
+        <h2>OUR SPONSOR</h2>
+        <div style="text-align: center; padding: 10px 20px; white-space: normal; width: 100%">
+            <div style="width: auto; text-align: left">
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_01.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_02.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_03.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_04.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_05.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_06.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_07.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_01.png"></div>
+                <div style="display: inline-block; margin: 5px"><img src="../images/common/footer_link_02.png"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-section">
+    <div class="inner-wrap footer-wrap">
+        <div class="footer-left">
+            <div class="footer-item">
+                <h3>전화</h3>
+                <span>02-599-0707</span>
+            </div>
+            <div class="footer-item">
+                <h3>이메일</h3>
+                <span>kmagf0707@naver.com</span>
+            </div>
+            <div class="footer-item">
+                <h3>사무실 위치</h3>
+                <span>서초구 논현로 삼호물산빌딩 B동 1609호</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3 style="margin-bottom: 0">KMAGF</h3>
+            <ul class="footer-media-list">
+                <li><a class="sns-youtube" href="#"></a></li>
+                <li><a class="sns-facebook" href="#"></a></li>
+                <li><a class="sns-kakaostory" href="#"></a></li>
+                <li><a class="sns-instagram" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
