@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미드아마추어골프연맹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="../css/common.css?v=0.1" rel="stylesheet">
+    <link href="../css/modal-donation.css" rel="stylesheet">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <style>
+        .map {
+            display: block;
+            width: 100%;
+            height: 350px;
+            background: url(../images/sub/img_map.png) no-repeat;
+            background-size: 100% auto;
+        }
+        .subway::before {
+            content: url(../images/sub/ic_tr_01.png);
+            position: relative;
+            top: 5px;
+            margin-right: 10px;
+        }
+        .bus::before {
+            content: url(../images/sub/ic_tr_02.png);
+            position: relative;
+            top: 5px;
+            margin-right: 10px;
+        }
+        .small-tag {
+            display: inline-block;
+            width: 65px;
+            height: 24px;
+            line-height: 24px;
+            margin: 0 10px 3px 0;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div id="download-window" class="modal-window">
+    <div class="modal-content" style="width: 400px; border: 2px solid #303f56" >
+        <div class="modal-header">
+            <span>약정서 다운로드</span>
+            <a class="modal-close-button" href="javascript:closeModal('download-window')"></a>
+        </div>
+        <div class="modal-body">
+            <div style="padding: 20px">
+                <div style="width: 100%; text-align: center">
+                    <div><img src="../images/sub/icon-sign.png" style="width: 90px"></div>
+                    <div style="margin-top: 10px"><button class="btn" style="padding: 10px 30px">다운로드</button></div>
+                </div>
+                <div style="margin-top: 20px">
+                    <div>
+                        <p>약정서를 다운로드하여 작성하신 후 팩스, 이메일, 우편으로 송부해 주십시오.</p>
+                        <div class="table" style="width: 100%;">
+                            <div class="row">
+                                <div class="cell" style="color: #4175c4; font-weight: 700; width: 15%">팩스</div>
+                                <div class="cell">02-589-0710</div>
+                            </div>
+                            <div class="row">
+                                <div class="cell" style="color: #4175c4; font-weight: 700; ">주소</div>
+                                <div class="cell">서울특별시 서초구 논현로 87 삼호물산 B/D B동 16009호</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-margin"></div>
+<div class="top-menu-section">
+    <div class="top-menu-wrap inner-wrap">
+        <div class="logo"></div>
+        <ul class="navi main-navi">
+            <li><a href="greeting.html">연맹소개</a></li>
+            <li><a href="game-list.html">대회정보</a></li>
+            <li><a href="member-announce.html">자료실</a></li>
+            <li class="active"><a href="donation.html">후원</a></li>
+            <li><a href="notice.html">게시판</a></li>
+            <li><a href="#">SHOP</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner-section banner-1">
+    <div class="inner-wrap banner-wrap">
+        <h1>후원</h1>
+        <h3>Support</h3>
+    </div>
+</div>
+<div class="submenu-section">
+    <div class="inner-wrap submenu-wrap">
+        <ul class="navi-path">
+            <li><a href="/">&nbsp;</a></li>
+            <li>후원</li>
+        </ul>
+        <div class="submenu-container">
+            <ul class="navi">
+                <li class="active"><a href="donation.html">KMAGF 기부</a></li>
+                <li><a href="donation-2.html">온라인 약정</a></li>
+                <li><a href="donation-3.html">기부 현황</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="content-wrap inner-wrap">
+        <div class="left-area">
+            <div class="current-page-name">KMAGF 기부</div>
+        </div>
+        <div class="right-area">
+            <div class="title">KMAGF 기부</div>
+            <hr style="border-top: 1px solid #cccccc"/>
+            <div class="body" style="line-height: 1.8">
+                <span class="subtitle">기부현황</span>
+                <div class="table">
+                    <div class="row">
+                        <div class="cell" style="padding: 0 15px 0 10px; width: 65%">KMAGF와 함께 한 모든 후원기부활동과 누적된 현황 금액으로 저희 한국미드아마추어 골프연맹에서는 회원분들의 정성과 사랑에 감사드립니다.</div>
+                        <div class="cell" style="padding: 0 10px 0 55px">현재 누적 현황<br><span style="font-size: 2.4rem; color: black; font-weight: 800">10,234,560</span>원</div>
+                    </div>
+                </div>
+
+                <span class="subtitle" style="margin-top: 80px">기부 활동</span>
+                <div class="table" style="width: 100%; text-align: center">
+                    <div class="row">
+                        <div class="cell" style="width: 33%; text-align: center"><img src="../images/sub/icon-donation1.png"></div>
+                        <div class="cell" style="width: 33%; text-align: center"><img src="../images/sub/icon-donation2.png"></div>
+                        <div class="cell" style="width: 33%; text-align: center"><img src="../images/sub/icon-donation3.png"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell" style="padding: 5px 10px; font-size: 0.9rem">한국미드아마추어 골프연맹<br>발전 기금활동</div>
+                        <div class="cell" style="padding: 5px 10px; font-size: 0.9rem">미드아마추어 골프연맹 동호회<br>발전 기금활동</div>
+                        <div class="cell" style="padding: 5px 10px; font-size: 0.9rem">주니어 골프 발전 기금활동</div>
+                    </div>
+                </div>
+
+                <span class="subtitle" style="margin-top: 80px">기부 방법</span>
+                <div>
+                    <div style="font-weight: 700; color: #303f56">KMAGF 발전기부</div>
+                    <div>사랑의 버디는 프로그램에 참가한 선수가 버디를 한 개 기록(이글은 버디 2개로 계산)할 때마다 일정 금액을 적립해 연말에
+                    기부하는 프로그램이다. 공식 대회마다 관련 프로그램으로 올해 2019년 벌써 총 32명의 회원이 1000만원이 넘는 기부금을 조성하기도 했습니다.</div>
+                    <div style="margin-top: 20px; font-weight: 700; color: #303f56">무통장 / 자동이체 기부</div>
+                    <div>무통장입금과 자동이체 납부방식으로, 온라인 및 무통장입금 후원은 정보주체의 동의하에 실명인증단계 후 약정서 작성을 통해 진행할 수 있습니다.<br>
+                        <span style="margin-right: 10px; color: #1e7e34">문의</span> 02-589-0707 <span style="margin-left: 20px; margin-right: 10px; color: #1e7e34">이메일</span> kmagf0707@naver.com
+                    </div>
+                    <button id="btn-download-agreement" class="btn" style="margin: 10px 0">약정 참여하기</button>
+                </div>
+
+                <span class="subtitle" style="margin-top: 80px">방문 후원</span>
+                <div>
+                    한국미드아마추어골프연맹 사무실로 오셔서 직접 전달하실 수 있습니다.<br>
+                    연맹 사무실 위치 | 서울특별시 서초구 논현로 87(양재동) 삼호물산빌딩 B동 1609호
+                </div>
+                <a class="map" href="https://map.naver.com/?searchCoord=3330aba37b9be72a792edfa6148e05b4f780b0b22bedf9f1a093a76657eab28c&amp;query=a21hZ2Y%3D&amp;menu=location&amp;tab=1&amp;lng=059456c11387f8bef17aa4a66628de12&amp;mapMode=0&amp;mpx=bf11bb3c22d8eddc1149d56a57ab191c66b21dd4ccbfffefa6a5f3b28bb1f7896defd02e603b84d2f9ecfde81b42dde7004eb4b0fc98b461605be149ebe21b2b&amp;lat=0f334a0f6b98bff7003b8d2f6bd2180b&amp;dlevel=12&amp;enc=b64" target="black">&nbsp;</a>
+                <div style="white-space: nowrap; margin-bottom: 100px">
+                    <div style="display: inline-block; width: 50%; vertical-align: top">
+                        <div class="subtitle subway">지하철 이용안내</div>
+                        <div>3호선 양재역 5번 출구</div>
+                        <div>마을버스(모든 마을버스) 승차 삼호물산 하차</div>
+                    </div>
+                    <div style="display: inline-block; width: 50%; vertical-align: top">
+                        <div class="subtitle bus">버스 이용안내</div>
+                        <div><span class="small-tag" style="background: #50a232; color: white">지선버스</span> 4312, 4430 (매봉역 경유)</div>
+                        <div><span class="small-tag" style="background: #8dd83c; color: white">마을버스</span> 09, 18, 21 (매봉역 경유)</div>
+                    </div>
+                </div>
+
+                <span class="subtitle" style="margin-top: 80px">이달의 기부 회원</span>
+                <div style="min-height: 100px"></div>
+
+                <span class="subtitle" style="margin-top: 80px">기부참여 회원</span>
+                <div style="min-height: 100px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-section">
+    <div class="inner-wrap footer-wrap">
+        <div class="footer-left">
+            <div class="footer-item">
+                <h3>전화</h3>
+                <span>02-599-0707</span>
+            </div>
+            <div class="footer-item">
+                <h3>이메일</h3>
+                <span>kmagf0707@naver.com</span>
+            </div>
+            <div class="footer-item">
+                <h3>사무실 위치</h3>
+                <span>서초구 논현로 삼호물산빌딩 B동 1609호</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3 style="margin-bottom: 0">KMAGF</h3>
+            <ul class="footer-media-list">
+                <li><a class="sns-youtube" href="#"></a></li>
+                <li><a class="sns-facebook" href="#"></a></li>
+                <li><a class="sns-kakaostory" href="#"></a></li>
+                <li><a class="sns-instagram" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $('#btn-download-agreement').click(function () {
+        $('#download-window').css('display', 'block');
+        //window.location.href = '#download-window';
+    });
+    function closeModal(id) {
+        $('#' + id).css('display', 'none');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.modal-window {
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    /*pointer-events: none;*/
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    display: none;
+}
+.modal-content {
+    margin: 10% auto;
+    min-width: 400px;
+}
+.modal-header {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: white !important;
+    background-color: #303f56 !important;
+}
+.modal-body {
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+}
+.modal-close-button {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(../images/common/icon-close.png);
+    float: right;
+}

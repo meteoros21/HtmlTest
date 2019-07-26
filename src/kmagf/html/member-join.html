@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미드아마추어골프연맹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="../css/common.css?v=0.1" rel="stylesheet">
+    <link href="../css/executive.css?v=0.1" rel="stylesheet">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <style>
+        .top-lined {
+            border-top: 3px solid #303f56
+        }
+        .data-table {
+            width: 100%;
+            background-color: white;
+        }
+        .data-table th, td {
+            padding: 10px;
+            border-bottom: 1px solid #dde1e6;
+        }
+        .data-table th {
+            white-space: nowrap;
+            color: #333366;
+            font-weight: 700;
+        }
+        .data-table td:first-child {
+            text-align: center;
+        }
+        .data-table .note {
+            color: #6699ff;
+            font-weight: 700;
+        }
+        .data-div {
+            padding: 20px 10px;
+            overflow: auto;
+            width: 100%;
+            height: 350px;
+            background-color: white;
+        }
+        input[type=text], input[type=password] {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 1rem;
+            line-height: 1.1;
+            border: 1px solid #aaaaaa;
+            width: 200px;
+            height: 36px;
+            box-sizing: border-box;
+            outline: none;
+            vertical-align: middle;
+        }
+
+        select {
+            width: 110px;
+            height: 36px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1rem;
+            font-family: sans-serif;
+            font-weight: 700;
+            color: #212f44;
+            line-height: 1.1;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #aaaaaa;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+            border-radius: 0;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            background-image: url(../images/sub/img-select-down.png);
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            outline: none;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        select:hover {
+            border-color: #888;
+        }
+        select:focus {
+            border-color: #aaa;
+            /*box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);*/
+            /*box-shadow: 0 0 0 3px -moz-mac-focusring;*/
+            /*color: #222;*/
+            outline: none;
+        }
+        select option {
+            font-weight:normal;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top-margin"></div>
+<div class="top-menu-section">
+    <div class="top-menu-wrap inner-wrap">
+        <div class="logo"></div>
+        <ul class="navi main-navi">
+            <li><a href="greeting.html">연맹소개</a></li>
+            <li><a href="game-list.html">대회정보</a></li>
+            <li><a href="member-announce.html">자료실</a></li>
+            <li><a href="donation.html">후원</a></li>
+            <li><a href="notice.html">게시판</a></li>
+            <li><a href="#">SHOP</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner-section banner-2">
+    <div class="inner-wrap banner-wrap">
+        <h1>회원가입</h1>
+        <h3>Member Join</h3>
+    </div>
+</div>
+<div class="submenu-section">
+    <div class="inner-wrap submenu-wrap">
+        <ul class="navi-path">
+            <li><a href="/">&nbsp;</a></li>
+            <li>회원가입</li>
+        </ul>
+        <div class="submenu-container">
+            <ul class="navi">
+                <li class="active"><a href="greeting.html">회원가입 안내</a></li>
+                <li><a href="golf-rule.html">골프규칙</a></li>
+                <li><a href="announce.html">보도자료</a></li>
+                <li><a href="gallery.html">갤러리</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="content-wrap inner-wrap">
+        <div class="left-area">
+            <div class="current-page-name">회원가입안내</div>
+            <div class="page-menu active"><a href="member-announce.html">회원 가입안내</a></div>
+            <div class="page-menu"><a href="member-announce2.html">정회원 가입안내</a></div>
+        </div>
+        <div class="right-area">
+            <div class="title">회원가입안내</div>
+            <hr style="border-top: 1px solid #cccccc"/>
+            <div class="body" style="padding-bottom: 80px">
+
+                <span class="subtitle">회원정보</span>
+                <div style="float: right; margin-top: -44px">(*)는 필수입력정보입니다.</div>
+                <form name="join-form">
+                    <input type="hidden" name="birthday">
+                <table class="data-table w-100 top-lined">
+                    <tr>
+                        <th style="width: 20%">*이름</th>
+                        <td><input type="text" name="userName"></td>
+                    </tr>
+                    <tr>
+                        <th>*사진</th>
+                        <td><img src="../images/common/bg_member.png" style="display: inline-block; vertical-align: middle"> <a style="display: inline-block; vertical-align: middle; margin-left: 10px" href="#">프로필 사진을 업로드해 주십시오.</a></td>
+                    </tr>
+                    <tr>
+                        <th>*생년월일</th>
+                        <td><select name="b-year"></select> 년 <select name="b-month"></select> 월 <select name="b-day"></select> 일</td>
+                    </tr>
+                    <tr>
+                        <th>*성별</th>
+                        <td><div class="checkbox"><input type="radio" name="gender" value="M" id="male" checked="checked"><label for="male">남자</label> <input type="radio" name="gender" value="F" id="female"><label for="female">여자</label></div> </td>
+                    </tr>
+                    <tr>
+                        <th>*아이디</th>
+                        <td><input type="text" name="userId"><button class="btn btn-normal" style="height: 36px; vertical-align: middle; padding: 0.4rem 0.8rem; margin-left: 10px; font-size: 1rem">중복확인</button> </td>
+                    </tr>
+                    <tr>
+                        <th>*비밀번호</th>
+                        <td><input type="password" name="userPwd"></td>
+                    </tr>
+                    <tr>
+                        <th>*비밀번호 확인</th>
+                        <td><input type="password" name="userPwd2"></td>
+                    </tr>
+                    <tr>
+                        <th>*휴대전화</th>
+                        <td>
+                            <div><select name="phone1" style="width: 80px">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                                <option value="070">070</option>
+                                <option value="0130">0130</option>
+                                <option value="0303">0303</option>
+                                <option value="0502">0502</option>
+                                <option value="0504">0504</option>
+                                <option value="0505">0505</option>
+                                <option value="0506">0506</option>
+                            </select> - <input type="text" name="phone2" style="width: 80px"> -
+                                <input type="text" name="phone3" style="width: 80px">
+                            </div>
+                            <div style="padding-top: 10px">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="agreeSms" id="agree-sms"><label for="agree-sms">문자 수신동의</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>*이메일</th>
+                        <td><div><input type="text" name="email1" style="width: 140px"> @ <input type="text" name="email2" style="width: 140px; border-right: none"><select name="domains" style="width: 160px">
+                            <option value="">직접입력</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="nate.com">nate.com</option>
+                            <option value="daum.net">daum.net</option>
+                            <option value="dreamwiz.com">dreamwiz.com</option>
+                            <option value="lycos.co.kr">lycos.co.kr</option>
+                            <option value="empal.com">empal.com</option>
+                            <option value="chol.com">chol.com</option>
+                            <option value="korea.com">korea.com</option>
+                            <option value="hanafos.com">hanafos.com</option>
+                            <option value="hanmir.com">hanmir.com</option>
+                            <option value="hotmail.com">hotmail.com</option>
+                            <option value="hanmail.net">hanmail.net</option>
+                        </select></div>
+                        <div style="padding-top: 10px">
+                            <div class="checkbox">
+                                <input type="checkbox" name="agreeEmail" id="agree-email"><label for="agree-email">이메일 수신동의</label>
+                            </div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <th>*지회선택</th>
+                        <td><select name="domains" style="width: 200px">
+                            <option value="1">서울지회</option>
+                            <option value="2">광주지회</option>
+                            <option value="4">대구지회</option>
+                            <option value="5">대전지회</option>
+                            <option value="6">부산지회</option>
+                            <option value="7">울산지회</option>
+                            <option value="8">인천지회</option>
+                            <option value="9">강원지</option>
+                            <option value="10">경기지회</option>
+                            <option value="11">경남지회</option>
+                            <option value="12">경북지회</option>
+                            <option value="13">전남지회</option>
+                            <option value="14">전북지회</option>
+                            <option value="15">충남지회</option>
+                            <option value="16">충북지회</option>
+                            <option value="17">울산지회</option>
+                            <option value="18">제주지회</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>
+                            <div>
+                                <input type="text" name="postNo1" style="width: 80px" readonly="readonly"> -
+                                <input type="text" name="postNo2" style="width: 80px" readonly="readonly">
+                                <button class="btn btn-normal" style="height: 36px; vertical-align: middle; padding: 0.4rem 0.8rem; margin-left: 10px; font-size: 1rem">우편번호 검색</button>
+                            </div>
+                            <div style="padding-top: 10px">
+                                <input type="text" name="addr1" style="width: 80%" readonly="readonly">
+                            </div>
+                            <div style="padding-top: 10px">
+                                <input type="text" name="addr2" style="width: 80%" placeholder="상세주소를 입력하세요">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>구력</th>
+                        <td><input type="text" name="career"></td>
+                    </tr>
+                    <tr>
+                        <th>핸디캡</th>
+                        <td><input type="text" name="handicap"></td>
+                    </tr>
+                </table>
+                </form>
+
+                <span class="subtitle" style="margin-top: 50px">정회원 회비 납부 방법</span>
+                <p>무통장입금 계좌번호 : IBK 기업은행 02-589-0710-0  ｜  예금주 : 한국실업(미드아마)<br/>
+                    * 납부시 회원가입하신 성명으로 납부를 하여주시기 바랍니다.</p>
+
+                <div style="width: 100%; text-align: center; margin-top: 50px">
+                    <button id="btn-join" class="btn btn-default" style="width: 200px">회원가입</button>
+                    <button id="btn-cancel" class="btn btn-normal" style="width: 200px">가입취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-section">
+    <div class="inner-wrap footer-wrap">
+        <div class="footer-left">
+            <div class="footer-item">
+                <h3>전화</h3>
+                <span>02-599-0707</span>
+            </div>
+            <div class="footer-item">
+                <h3>이메일</h3>
+                <span>kmagf0707@naver.com</span>
+            </div>
+            <div class="footer-item">
+                <h3>사무실 위치</h3>
+                <span>서초구 논현로 삼호물산빌딩 B동 1609호</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3 style="margin-bottom: 0">KMAGF</h3>
+            <ul class="footer-media-list">
+                <li><a class="sns-youtube" href="#"></a></li>
+                <li><a class="sns-facebook" href="#"></a></li>
+                <li><a class="sns-kakaostory" href="#"></a></li>
+                <li><a class="sns-instagram" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function checkFormValue()
+    {
+        return false;
+    }
+
+    var date = new Date();
+    var form = document.forms['join-form'];
+    for (var y = date.getFullYear(); y >= 1900; y--)
+    {
+        var option = $('<option value="' + y + '">' + y + '</option>');
+        $(form['b-year']).append(option);
+    }
+    for (var m = 1; m <=12; m++)
+    {
+        var val = (m < 10) ? '0' + m : m;
+        var option = $('<option value="' + val + '">' + val + '</option>');
+        $(form['b-month']).append(option);
+    }
+    for (var d = 1; d <=31; d++)
+    {
+        var val = (d < 10) ? '0' + d : d;
+        var option = $('<option value="' + val + '">' + val + '</option>');
+        $(form['b-day']).append(option);
+    }
+
+    $(form['domains']).on('change', function () {
+        if ($(this).val() == '')
+        {
+            $(form['email2']).prop('readonly', false);
+            //$(form['email2']).val($(this).val());
+        }
+        else
+        {
+            $(form['email2']).prop('readonly', true);
+            $(form['email2']).val($(this).val());
+        }
+    });
+
+    $('#btn-cancel').click(function () {
+        window.location.href = 'index.html';
+    });
+    $('#btn-join').click(function () {
+        if (checkFormValue())
+        {
+
+        }
+    });
+</script>
+</body>
+</html>

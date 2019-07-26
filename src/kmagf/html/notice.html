@@ -5,139 +5,7 @@
     <title>미드아마추어골프연맹</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href="../css/common.css?v=0.1" rel="stylesheet">
-    <style>
-        .table-a {
-            border-collapse: collapse;
-            border-top: 2px solid #303f56;
-            background-color: white;
-        }
-
-        .table-a th,td {
-            padding: 15px 10px;
-            text-align: center;
-            font-size: 1rem;
-            letter-spacing: -1px;
-            border-bottom: 1px dashed #c2c2c2;
-            width: 10px;
-            white-space: nowrap;
-        }
-
-        .table-a th {
-            /*background-color: #edf3fb;*/
-            color: #303f56;
-            border-bottom: 1px solid #dde1e6;
-        }
-        .table-a td {
-            border-bottom: 1px solid #f5f5f5;
-        }
-        .table-a td:nth-child(2) {
-            text-align: left;
-        }
-
-        .search-input input[type=text] {
-            display: inline-block;
-            margin: 0 auto;
-            padding: 10px;
-            font-size: 1rem;
-            line-height: 1.1;
-            /*border: 1px solid #aaaaaa;*/
-            border: none;
-            width: 200px;
-            height: 36px;
-            box-sizing: border-box;
-            outline: none;
-            vertical-align: middle;
-        }
-        .select-css {
-            width: 110px;
-            height: 36px;
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 1rem;
-            font-family: sans-serif;
-            font-weight: 700;
-            color: #212f44;
-            line-height: 1.1;
-            margin: 0;
-            padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid #aaaaaa;
-            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-            border-radius: 0;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: #fff;
-            background-image: url(../images/sub/img-select-down.png);
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            outline: none;
-        }
-        .select-css::-ms-expand {
-            display: none;
-        }
-        .select-css:hover {
-            border-color: #888;
-        }
-        .select-css:focus {
-            border-color: #aaa;
-            /*box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);*/
-            /*box-shadow: 0 0 0 3px -moz-mac-focusring;*/
-            /*color: #222;*/
-            outline: none;
-        }
-        .select-css option {
-            font-weight:normal;
-        }
-
-        .search-input {
-            border: 1px solid #aaaaaa;
-        }
-
-        ul.pageing {
-            margin: 0;
-            padding: 0;
-        }
-        ul.pageing li {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 5px;
-        }
-        ul.pageing li button {
-            font-size: 1rem;
-            width: 30px;
-            height: 30px;
-            border: none;
-            color: #212f44;
-            background-color: transparent;
-            cursor: pointer;
-            outline: none;
-        }
-        ul.pageing li button:hover {
-            color: white;
-            background-color: #00477e;
-            border-radius: 50%;
-        }
-        ul.pageing li.active button {
-            color: white;
-            background-color: #00477e;
-            border-radius: 50%;
-        }
-
-        ul.pageing li button.next {
-            background: url(../images/common/icon-page-next.png) no-repeat center top 10px;
-        }
-        ul.pageing li button.next2 {
-            background: url(../images/common/icon-page-next2.png) no-repeat center top 10px;
-        }
-        ul.pageing li button.prev {
-            background: url(../images/common/icon-page-prev.png) no-repeat center top 10px;
-        }
-        ul.pageing li button.prev2 {
-            background: url(../images/common/icon-page-prev2.png) no-repeat center top 10px;
-        }
-
-    </style>
+    <link href="../css/board.css?v=0.1" rel="stylesheet">
 </head>
 <body>
 <div class="top-margin"></div>
@@ -168,9 +36,7 @@
         </ul>
         <div class="submenu-container">
             <ul class="navi">
-                <li class="active"><a href="notice.html">KMAGF 공지사항</a></li>
-                <li><a href="news.html">KMAGF 뉴스</a></li>
-                <li><a href="qna.html">Q &amp; A</a></li>
+                <li class="active"><a href="notice.html">KMAGF 게시판</a></li>
             </ul>
         </div>
     </div>
@@ -179,21 +45,23 @@
     <div class="content-wrap inner-wrap">
         <div class="left-area">
             <div class="current-page-name">KMAGF 게시판</div>
+            <div class="page-menu active"><a href="notice.html">KMAGF 공지</a></div>
+            <div class="page-menu"><a href="notice.html">KMAGF 소식</a></div>
+            <div class="page-menu"><a href="qna.html">Q &amp; A</a></div>
         </div>
         <div class="right-area">
-            <div class="title">공지사항</div>
-            <hr style="border-top: 1px solid #cccccc"/>
-
+            <div class="title">KMAGF 공지</div>
+            <hr/>
             <div class="body" style="padding-bottom: 80px">
                 <div style="width: 100%; text-align: right; padding-bottom: 10px">
-                    <select class="select-css form-control">
+                    <select class="select-css">
                         <option>제목</option>
                         <option>본문</option>
                         <option>제목+본문</option>
                     </select>
                     <div class="search-input" style="display: inline-block">
                         <input type="text" class="input-css" name="keyword" style="position: relative">
-                        <button style="display: inline-block; margin-left: -2px; position: relative; vertical-align: middle; width:40px; height: 36px; background: url(../images/sub/img-btn-search.png) no-repeat center; background-color: #1e3a64; padding: 0; margin: 0; border: none"></button>
+                        <button style="display: inline-block; position: relative; vertical-align: middle; width:40px; height: 36px; background: url(../images/sub/img-btn-search.png) no-repeat center; background-color: #1e3a64; padding: 0; margin: 0; border: none"></button>
                     </div>
                 </div>
                 <div style="margin-bottom: 50px; width: 100%; overflow-x: auto">

@@ -91,9 +91,9 @@
         <ul class="navi main-navi">
             <li><a href="greeting.html">연맹소개</a></li>
             <li class="active"><a href="#">대회정보</a></li>
-            <li><a href="#">자료실</a></li>
-            <li><a href="#">후원</a></li>
-            <li><a href="#">게시판</a></li>
+            <li><a href="member-announce.html">자료실</a></li>
+            <li><a href="donation.html">후원</a></li>
+            <li><a href="notice.html">게시판</a></li>
             <li><a href="#">SHOP</a></li>
         </ul>
     </div>
@@ -112,9 +112,9 @@
         </ul>
         <div class="submenu-container">
             <ul class="navi">
-                <li class="active"><a href="#">2019 대회정보</a></li>
-                <li><a href="#">지난 대회정보</a></li>
-                <li><a href="#">아마추어 랭킹</a></li>
+                <li class="active"><a href="game-list.html">2019 대회정보</a></li>
+                <li><a href="game-list2.html">지난 대회정보</a></li>
+                <li><a href="ranking.html">아마추어 랭킹</a></li>
             </ul>
         </div>
     </div>
@@ -180,7 +180,6 @@
 <script>
     $('.game-row').click(function (e) {
         var gameId = $(this).attr('data-id');
-        alert(gameId);
         window.location.href = 'game-summary.html?gameId=' + gameId;
     });
 </script>

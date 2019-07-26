@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href="../css/common.css?v=0.1" rel="stylesheet">
     <link href="../css/executive.css?v=0.1" rel="stylesheet">
+    <script src="../js/jquery-1.12.4.min.js"></script>
     <style>
         .top-lined {
             border-top: 3px solid #303f56
@@ -42,9 +43,9 @@
     <div class="top-menu-wrap inner-wrap">
         <div class="logo"></div>
         <ul class="navi main-navi">
-            <li class="active"><a href="greeting.html">연맹소개</a></li>
+            <li><a href="greeting.html">연맹소개</a></li>
             <li><a href="game-list.html">대회정보</a></li>
-            <li><a href="member-announce.html">자료실</a></li>
+            <li class="active"><a href="member-announce.html">자료실</a></li>
             <li><a href="donation.html">후원</a></li>
             <li><a href="notice.html">게시판</a></li>
             <li><a href="#">SHOP</a></li>
@@ -67,7 +68,7 @@
             <ul class="navi">
                 <li class="active"><a href="greeting.html">회원가입 안내</a></li>
                 <li><a href="golf-rule.html">골프규칙</a></li>
-                <li><a href="announce.html">보도자료</a></li>
+                <li><a href="broadcast.html">보도자료</a></li>
                 <li><a href="gallery.html">갤러리</a></li>
             </ul>
         </div>
@@ -134,7 +135,7 @@
                     이 약관에 명시되지 않은 사항은 관계 법령의 규정에 따릅니다.<br></p>
                 </div>
                 <div class="checkbox" style="margin-top: 10px">
-                    <input id="agree1" type="checkbox"><label for="agree1">이용약관에 동의 합니다.</label>
+                    <input id="agree1" type="checkbox" value="1"><label for="agree1">이용약관에 동의 합니다.</label>
                 </div>
 
                 <span class="subtitle" style="margin-top: 50px">개인정보 수집 및 이용에 대한 안내</span>
@@ -157,12 +158,12 @@ KMAGF의 개인정보 보호 정책은 정부의 법률과 변경 내부 방침�
                     </pre>
                 </div>
                 <div class="checkbox" style="margin-top: 10px">
-                    <input id="agree2" type="checkbox"><label for="agree1">개인정보 수집 및 이용에 대한 정책에 동의 합니다.</label>
+                    <input id="agree2" type="checkbox" value="1"><label for="agree2">개인정보 수집 및 이용에 대한 정책에 동의 합니다.</label>
                 </div>
 
                 <div style="width: 100%; text-align: center; margin-top: 50px">
-                    <button class="btn btn-default" style="width: 200px">동의합니다</button>
-                    <button class="btn btn-normal" style="width: 200px">동의하지 않습니다</button>
+                    <button id="btn-agree" class="btn btn-default" style="width: 200px">동의합니다</button>
+                    <button id="btn-not-agree" class="btn btn-normal" style="width: 200px">동의하지 않습니다</button>
                 </div>
             </div>
         </div>
@@ -195,5 +196,27 @@ KMAGF의 개인정보 보호 정책은 정부의 법률과 변경 내부 방침�
         </div>
     </div>
 </div>
+<script>
+    $('#btn-agree').click(function ()
+    {
+        if ($('#agree1').prop('checked') == false)
+        {
+            alert('이용약관에 동의해 주십시오');
+            return;
+        }
+
+        if ($('#agree2').prop('checked') == false)
+        {
+            alert('개인정보 수집 및 이용에 동의해 주십시오.');
+            return;
+        }
+
+        window.location.href = 'member-join.html';
+    });
+
+    $('#btn-not-agree').click(function () {
+       window.location.href = 'index.html';
+    });
+</script>
 </body>
 </html>

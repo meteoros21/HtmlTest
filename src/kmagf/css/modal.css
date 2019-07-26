@@ -1,0 +1,96 @@
+.modal-window {
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.modal-window:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 2rem;
+    background: #fff;
+    color: #444;
+}
+
+.modal-window header {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-window h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+}
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    height: 42px;
+    background: url('../images/common/logo_sub.png') no-repeat;
+}
+
+.modal-window input[type="text"], input[type="password"] {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+    border: 1px solid #aaaaaa;
+    height: 34px;
+    width: 240px;
+    outline: none;
+}
+
+.modal-window select {
+    width: 110px;
+    height: 34px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #212f44;
+    line-height: 1.1;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #aaaaaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url(../images/sub/img-select-down.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    outline: none;
+}
