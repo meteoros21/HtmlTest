@@ -5,10 +5,32 @@
     <title>미드아마추어골프연맹</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href="../css/common.css?v=0.1" rel="stylesheet">
+    <link href="../css/executive.css?v=0.1" rel="stylesheet">
     <link href="../css/board.css" rel="stylesheet">
     <script src="../js/jquery-1.12.4.min.js"></script>
     <style>
-
+        .label {
+            color: #3c3c3c;
+            font-weight: 600;
+        }
+        .profile-block {
+            width: 100%; padding: 0 0 20px 0; white-space: nowrap;
+        }
+        .profile-block > div {
+            display: inline-block; vertical-align: top;
+        }
+        .btn-small {
+            margin-left: 20px; height: 36px; vertical-align: middle; padding: 0.4rem 0.8rem; font-size: 1rem; background-color: white; cursor: pointer;
+        }
+        .sub-profile-block {
+            width: 100%; white-space: nowrap
+        }
+        .sub-profile-block > div {
+            display: inline-block;
+            white-space: normal;
+            vertical-align: top;
+            width: 50%;
+        }
     </style>
 </head>
 <body>
@@ -26,24 +48,22 @@
         </ul>
     </div>
 </div>
-<div class="banner-section banner-2">
+<div class="banner-section banner-5">
     <div class="inner-wrap banner-wrap">
-        <h1>회원가입</h1>
-        <h3>Member Join</h3>
+        <h1>마이 페이지</h1>
+        <h3>My page</h3>
     </div>
 </div>
 <div class="submenu-section">
     <div class="inner-wrap submenu-wrap">
         <ul class="navi-path">
             <li><a href="/">&nbsp;</a></li>
-            <li>회원가입</li>
+            <li>마이 페이지</li>
         </ul>
         <div class="submenu-container">
             <ul class="navi">
-                <li class="active"><a href="greeting.html">회원가입 안내</a></li>
-                <li><a href="golf-rule.html">골프규칙</a></li>
-                <li><a href="announce.html">보도자료</a></li>
-                <li><a href="gallery.html">갤러리</a></li>
+                <li class="active"><a href="member-profile.html">회원 기본정보</a></li>
+                <li><a href="member-fee.html">회비관리</a></li>
             </ul>
         </div>
     </div>
@@ -57,22 +77,39 @@
         </div>
         <div class="right-area">
             <div class="title">회원가입안내</div>
-            <hr style="border-top: 1px solid #cccccc"/>
+            <hr/>
             <div class="body" style="padding-bottom: 80px">
-
-                <span class="subtitle">회원정보</span>
+                <span class="subtitle">회원 기본정보</span>
                 <div style="float: right; margin-top: -44px; font-size: 0.9rem; color: #343a40">(*)는 필수입력정보입니다.</div>
                 <form name="join-form">
+                    <div class="profile-block">
+                        <div style="width: 150px">
+                            <img src="../images/sub/img-profile.png" style="display: block; width: 143px;">
+                        </div>
+                        <div style="padding: 0 20px; width: 550px">
+                            <div>[정회원] <span style="font-size: 1.3rem">홍길동</span> 회원님 <button class="btn btn-small">사진첨부</button></div>
+                            <div class="sub-profile-block">
+                                <div>
+                                    <p class="label">KMAR 랭킹</p>
+                                    순위정보가 존재하지 않습니다.
+                                </div>
+                                <div>
+                                    <p class="label">최근 참여 경기</p>
+                                    2019 한,중 미드아마추어 국가 대항전 ㅁㄹㅁㅁㄴ알 ㅇㄹㅁㄴㄹ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <input type="hidden" name="birthday">
                 <table class="table-a">
                     <tr>
                         <th style="width: 20%">*이름</th>
                         <td><input type="text" name="userName"></td>
                     </tr>
-                    <tr>
-                        <th>*사진</th>
-                        <td><img src="../images/common/bg_member.png" style="display: inline-block; vertical-align: middle"> <a style="display: inline-block; vertical-align: middle; margin-left: 10px" href="#">프로필 사진을 업로드해 주십시오.</a></td>
-                    </tr>
+                    <!--<tr>-->
+                        <!--<th>*사진</th>-->
+                        <!--<td><img src="../images/common/bg_member.png" style="display: inline-block; vertical-align: middle"> <a style="display: inline-block; vertical-align: middle; margin-left: 10px" href="#">프로필 사진을 업로드해 주십시오.</a></td>-->
+                    <!--</tr>-->
                     <tr>
                         <th>*생년월일</th>
                         <td><select class="select-css" name="b-year"></select> 년&nbsp;&nbsp;
@@ -85,7 +122,7 @@
                     </tr>
                     <tr>
                         <th>*아이디</th>
-                        <td><input type="text" name="userId"><button class="btn btn-normal" style="height: 36px; vertical-align: middle; padding: 0.4rem 0.8rem; margin-left: 10px; font-size: 1rem">중복확인</button> </td>
+                        <td><input type="text" name="userId" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <th>*비밀번호</th>
@@ -124,7 +161,7 @@
                     </tr>
                     <tr>
                         <th>*이메일</th>
-                        <td><div><input type="text" name="email1" style="width: 140px"> @ <input type="text" name="email2" style="width: 140px; border-right: none"><select class="select-css" name="domains" style="width: 160px">
+                        <td><div><input type="text" name="email1" style="width: 140px"> @ <input type="text" name="email2" style="border-right: 0; width: 140px"><select class="select-css" name="domains" style="width: 160px">
                             <option value="">직접입력</option>
                             <option value="gmail.com">gmail.com</option>
                             <option value="naver.com">naver.com</option>
@@ -195,13 +232,9 @@
                 </table>
                 </form>
 
-                <span class="subtitle" style="margin-top: 50px">정회원 회비 납부 방법</span>
-                <p>무통장입금 계좌번호 : IBK 기업은행 02-589-0710-0  ｜  예금주 : 한국실업(미드아마)<br/>
-                    * 납부시 회원가입하신 성명으로 납부를 하여주시기 바랍니다.</p>
-
                 <div style="width: 100%; text-align: center; margin-top: 50px">
-                    <button id="btn-join" class="btn btn-default" style="width: 200px">회원가입</button>
-                    <button id="btn-cancel" class="btn btn-normal" style="width: 200px">가입취소</button>
+                    <button id="btn-join" class="btn btn-default" style="width: 200px">회원정보 수정</button>
+                    <!--<button id="btn-cancel" class="btn btn-normal" style="width: 200px">가입취소</button>-->
                 </div>
             </div>
         </div>

@@ -5,10 +5,12 @@
     <title>미드아마추어골프연맹</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href="../css/common.css?v=0.1" rel="stylesheet">
+    <link href="../css/board.css" rel="stylesheet">
     <style>
         .table-rank {
             border-collapse: collapse;
-            border: 2px solid #c2c2c2;
+            border: 1px solid #c2c2c2;
+            background-color: white;
         }
 
         .table-rank th,td {
@@ -24,47 +26,15 @@
             background-color: #edf3fb;
         }
 
-        .select-css {
-            display: inline-block;
+        .table-rank td:nth-child(3) {
+            text-align: left;
+            padding: 5px 10px;
             font-size: 1rem;
-            font-family: sans-serif;
-            font-weight: 700;
-            /*color: #444;*/
-            color: inherit;
-            line-height: 1.1;
-            padding: .4em 1.4em .3em .8em;
-            box-sizing: border-box;
-            /*margin: 0;*/
-            border: 1px solid #aaa;
-            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-            border-radius: .4em;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: #fff;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-            linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
-            background-repeat: no-repeat, repeat;
-            background-position: right .7em top 50%, 0 0;
-            background-size: .65em auto, 100%;
-            outline: none;
-            /*margin: 2px 1px;*/
         }
-        .select-css::-ms-expand {
-            display: none;
-        }
-        .select-css:hover {
-            border-color: #888;
-        }
-        .select-css:focus {
-            border-color: #aaa;
-            /*box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);*/
-            /*box-shadow: 0 0 0 3px -moz-mac-focusring;*/
-            /*color: #222;*/
-            outline: none;
-        }
-        .select-css option {
-            font-weight:normal;
+
+        .table-rank .game-name {
+            font-weight: 600;
+            margin-right: 5px;
         }
 
     </style>
@@ -76,7 +46,7 @@
         <div class="logo"></div>
         <ul class="navi main-navi">
             <li><a href="greeting.html">연맹소개</a></li>
-            <li><a href="game-list.html">대회정보</a></li>
+            <li class="active"><a href="game-list.html">대회정보</a></li>
             <li><a href="member-announce.html">자료실</a></li>
             <li><a href="donation.html">후원</a></li>
             <li><a href="notice.html">게시판</a></li>
@@ -94,7 +64,7 @@
     <div class="inner-wrap submenu-wrap">
         <ul class="navi-path">
             <li><a href="/">&nbsp;</a></li>
-            <li>일정,장소 및 조편성</li>
+            <li>대회정보</li>
         </ul>
         <div class="submenu-container">
             <ul class="navi">
@@ -133,32 +103,42 @@
                         <tr>
                             <th>순위</th>
                             <th>선수명</th>
-                            <th>배점(100)<br/>경기</th>
-                            <th>배점(200)<br/>경기</th>
-                            <th>배점(300)<br/>경기</th>
-                            <th>배점(400)<br/>경기</th>
-                            <th>배점(500)<br/>경기</th>
+                            <th>경기 및 득점</th>
                             <th>Total</th>
                         </tr>
                         <tr>
                             <td>1</td>
                             <td>김양권</td>
-                            <td>550</td>
-                            <td>65</td>
-                            <td>100</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <span class="game-name">한일점</span>2위(80점 / 100점)<br/>
+                                <span class="game-name">KGA미드아마선수권 대회</span>1위(500점 / 500점)<br/>
+                                <span class="game-name">KGA클럽대항전</span>4위(65점 / 100점)<br/>
+                                <span class="game-name">벤제프(예선)</span>1위(100점 / 100점)<br/>
+                                <span class="game-name">부산 MBC</span>27위(75점 / 300점)<br/>
+                            </td>
                             <td>745</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>신철호</td>
-                            <td>350</td>
-                            <td>65</td>
-                            <td>100</td>
-                            <td></td>
-                            <td></td>
-                            <td>645</td>
+                            <td>
+                                <span class="game-name">한일점</span>4위(65점 / 100점)<br/>
+                                <span class="game-name">KGA미드아마선수권 대회</span>3위(350점 / 500점)<br/>
+                                <span class="game-name">부산 MBC</span>4위(195점 / 300점)<br/>
+                            </td>
+                            <td>610</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>정환</td>
+                            <td>
+                                <span class="game-name">한일점</span>27위(25점 / 100점)<br/>
+                                <span class="game-name">KGA미드아마선수권 대회</span>2위(400점 / 500점)<br/>
+                                <span class="game-name">KGA클럽대항전</span>2위(80점 / 100점)<br/>
+                                <span class="game-name">벤제프(예선)</span>49위(5점 / 100점)<br/>
+                                <span class="game-name">부산 MBC</span>30위(75점 / 300점)<br/>
+                            </td>
+                            <td>745</td>
                         </tr>
                     </table>
                 </div>

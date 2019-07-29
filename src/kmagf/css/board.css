@@ -106,6 +106,7 @@ ul.pageing li button.prev2 {
 }
 
 .table-a {
+    width: 100%;
     border-collapse: collapse;
     border-top: 2px solid #303f56;
     background-color: white;
@@ -116,7 +117,7 @@ ul.pageing li button.prev2 {
     text-align: center;
     font-size: 1rem;
     letter-spacing: -1px;
-    border-bottom: 1px dashed #c2c2c2;
+    border-bottom: 1px solid #dde1e6;
     width: 10px;
     white-space: nowrap;
 }
@@ -125,9 +126,6 @@ ul.pageing li button.prev2 {
     /*background-color: #edf3fb;*/
     color: #303f56;
     border-bottom: 1px solid #dde1e6;
-}
-.table-a td {
-    border-bottom: 1px solid #f5f5f5;
 }
 .table-a td:nth-child(2) {
     text-align: left;
@@ -191,4 +189,18 @@ ul.pageing li button.prev2 {
 
 .search-input {
     border: 1px solid #aaaaaa;
+}
+
+input[type=text], input[type=password] {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.1;
+    border: 1px solid #aaaaaa;
+    width: 200px;
+    height: 38px;
+    box-sizing: border-box;
+    outline: none;
+    vertical-align: middle;
 }
