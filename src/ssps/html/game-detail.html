@@ -10,18 +10,13 @@
     <link href="../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="../inspinia/css/animate.css" rel="stylesheet">
     <link href="../inspinia/css/style.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
 
     <!-- Mainly scripts -->
     <script src="../inspinia/js/jquery-3.1.1.min.js"></script>
     <script src="../inspinia/js/bootstrap.min.js"></script>
     <script src="../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <style>
-        .game-detail th {
-            text-align: center;
-            background-color: #f8f8f8;
-        }
-    </style>
 </head>
 <body>
 <div id="wrapper">
@@ -79,83 +74,31 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <div>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gameEditModal">경기 등록</button>
-                            </div>
-                            <div class="modal inmodal" id="gameEditModal" tabindex="1" role="dialog" aria-hidden="true" style="display: none">
-                                <div class="modal-dialog">
-                                    <div class="modal-content animated flipInY">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">
-                                                <span aria-hidden="true">x</span>
-                                                <span class="sr-only">Close</span>
-                                            </button>
-                                            <h4 class="modal-title">경기 기본정보</h4>
-                                            <small class="font-bold">경기와 관련된 상세정보를 입력해 주십시오.</small>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form role="form">
-                                                <div class="form-group">
-                                                    <label>경기명칭</label>
-                                                    <input type="text" name="gameName" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>리그</label>
-                                                    <select name="gameLeague" class="form-control">
-                                                        <option value="test1">전국 대학생 연합 리그</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>경기기간</label>
-                                                    <div class="form-inline">
-                                                        <input type="text" name="startDate" class="form-control">
-                                                        <input type="text" name="endDate" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>경기장소</label>
-                                                    <input type="text" name="location" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>참여팀수</label>
-                                                    <input type="number" name="teamCount" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>경기상태</label>
-                                                    <select name="gameStatus" class="form-control">
-                                                        <option value="0">준비중</option>
-                                                        <option value="0">팀모집중</option>
-                                                        <option value="0">준비완료</option>
-                                                        <option value="0">진행중</option>
-                                                        <option value="0">진행완료</option>
-                                                        <option value="0">취소</option>
-                                                    </select>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-white" style="vertical-align: top" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" style="vertical-align: top">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="table-responsive">
-                                <table class="table table-bordered game-detail">
+                                <table class="table table-bordered table-detail">
                                     <tbody>
                                     <tr>
                                         <th style="width: 15%">경기명</th>
-                                        <td style="width: 35%">제 3회 대학생배 여자리그</td>
+                                        <td style="width: 35%"><input type="text" name="gameName" value="제 3회 대학생배 농구경기" class="form-control"></td>
                                         <th style="width: 15%">종목</th>
-                                        <td style="width: 35%">3x3 농구</td>
+                                        <td style="width: 35%"><select name="sportsName" class="form-control">
+                                            <option value="1">3x3농구</option>
+                                            <option value="2">야구</option>
+                                        </select></td>
                                     </tr>
                                     <tr>
                                         <th style="width: 15%">리그</th>
-                                        <td style="width: 35%">전국 여대학생 리그</td>
+                                        <td style="width: 35%"><select name="sportsName" class="form-control">
+                                            <option value="1">전국 대학생 길거리 농구 리그</option>
+                                            <option value="2">직장인 3x3 길거리 농구 리그</option>
+                                        </select></td>
                                         <th style="width: 15%">상태</th>
-                                        <td style="width: 35%">종료</td>
+                                        <td style="width: 35%"><select name="gameStatus" class="form-control">
+                                            <option value="0">대기중</option>
+                                            <option value="1">참가신청</option>
+                                            <option value="2">경기중</option>
+                                            <option value="3">경기완료</option>
+                                        </select> </td>
                                     </tr>
                                     <tr>
                                         <th>시작일</th>
@@ -165,12 +108,19 @@
                                     </tr>
                                     <tr>
                                         <th>장소</th>
-                                        <td>서울 모모 체육관 농구장</td>
+                                        <td><input type="text" name="gameFee" value="서울 모모 체육관 농구장" class="form-control"></td>
                                         <th>참여팀수</th>
                                         <td>8</td>
                                     </tr>
+                                    <tr>
+                                        <th>참가비</th>
+                                        <td><input type="number" name="gameFee" value="0" class="form-control"></td>
+                                    </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="button-group">
+
                             </div>
 
                         </div>
@@ -236,7 +186,7 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>경기 상세정보</h5>
+                            <h5>경기 상세일정</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
