@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socical Sports Platform Service</title>
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <style>
+        #filter-league { margin-left: 5px }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse" id="side-menu-container">
+        </div>
+        <script>
+            $('#side-menu-container').load('side-menu.html');
+        </script>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div id="right-nav-container" class="row border-bottom">
+        </div>
+        <script>
+            $('#right-nav-container').load('right-nav-container.html');
+        </script>
+        <!-- end of header -->
+
+        <!-- start of submenu -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>경기 관리</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a>경기관리</a>
+                    </li>
+                    <li class="active">
+                        <strong>경기 리스트</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+
+        <!-- 본문 -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>경기 리스트</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                                    <!--<i class="fa fa-wrench"></i>-->
+                                <!--</a>-->
+                                <!--<ul class="dropdown-menu dropdown-user">-->
+                                    <!--<li><a href="#">Config option 1</a>-->
+                                    <!--</li>-->
+                                    <!--<li><a href="#">Config option 2</a>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="modal inmodal" id="gameEditModal" tabindex="1" role="dialog" aria-hidden="true" style="display: none">
+                                <div class="modal-dialog">
+                                    <div class="modal-content animated flipInY">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                <span aria-hidden="true">x</span>
+                                                <span class="sr-only">Close</span>
+                                            </button>
+                                            <h4 class="modal-title">경기 기본정보</h4>
+                                            <small class="font-bold">경기와 관련된 상세정보를 입력해 주십시오.</small>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form role="form">
+                                                <table class="table table-bordered table-detail">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th style="width: 15%">경기명</th>
+                                                        <td style="width: 35%"><input type="text" name="gameName" value="제 3회 대학생배 농구경기" class="form-control"></td>
+                                                        <th style="width: 15%">종목</th>
+                                                        <td style="width: 35%"><select name="sportsName" class="form-control">
+                                                            <option value="1">3x3농구</option>
+                                                            <option value="2">야구</option>
+                                                        </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="width: 15%">리그</th>
+                                                        <td style="width: 35%"><select name="sportsName" class="form-control">
+                                                            <option value="1">전국 대학생 길거리 농구 리그</option>
+                                                            <option value="2">직장인 3x3 길거리 농구 리그</option>
+                                                        </select></td>
+                                                        <th style="width: 15%">상태</th>
+                                                        <td style="width: 35%"><select name="gameStatus" class="form-control">
+                                                            <option value="0">대기중</option>
+                                                            <option value="1">참가신청</option>
+                                                            <option value="2">경기중</option>
+                                                            <option value="3">경기완료</option>
+                                                        </select> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>시작일</th>
+                                                        <td class="center">1999.08.10</td>
+                                                        <th>종료일</th>
+                                                        <td class="center">1999.08.20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>장소</th>
+                                                        <td><input type="text" name="gameFee" value="서울 모모 체육관 농구장" class="form-control"></td>
+                                                        <th>참여팀수</th>
+                                                        <td>8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>참가비</th>
+                                                        <td><input type="number" name="gameFee" value="0" class="form-control"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>게임설명</th>
+                                                        <td colspan="3"><textarea name="gameDscr" class="form-control"></textarea></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" style="vertical-align: top" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" style="vertical-align: top">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <!--<div style="width: 100%; text-align: right" class="dataTables_filter form-inline">-->
+                                    <!--<label>Search:-->
+                                        <!--<select id="filter-league" name="league" class="form-control input-sm">-->
+                                            <!--<option value="">전체 리그</option>-->
+                                            <!--<option value="직장인 리그">직장인 리그</option>-->
+                                            <!--<option value="전국 대학생 리그">전국 대학생 리그</option>-->
+                                            <!--<option value="전국 여대학생 리그">전국 여대학생 리그</option>-->
+                                        <!--</select>-->
+                                        <!--<input id="search-keyword" type="search" class="form-control input-sm" placeholder="Keyword" aria-controls="DataTables_Table_0"></label>-->
+                                <!--</div>-->
+                                <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                    <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>경기명</th>
+                                        <th>리그</th>
+                                        <th>시작일</th>
+                                        <th>종료일</th>
+                                        <th>진행상태</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><a href="game-detail.html?game-id=123">제 3회 대학생배 여자리그</a></td>
+                                        <td>전국 여대학생 리그</td>
+                                        <td class="center">1999.08.10</td>
+                                        <td class="center">1999.08.20</td>
+                                        <td class="center">참가신청</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><a href="game-detail.html?game-id=123">제 3회 대학생배 아마추어리그</a></td>
+                                        <td>전국 대학생 리그</td>
+                                        <td class="center">1999.05.03</td>
+                                        <td class="center">1999.05.12</td>
+                                        <td class="center">종료</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><a href="game-detail.html?game-id=123">제 4회 멍멍배 직장인 대회</a></td>
+                                        <td>직장인 리그</td>
+                                        <td class="center">1999.04.20</td>
+                                        <td class="center">1999.05.01</td>
+                                        <td class="center">종료</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
+
+<script>
+    function showGameModal() {
+        $('#gameEditModal').modal();
+    }
+
+    $(document).ready(function(){
+
+        var smenu = $('#game-list');
+        smenu.addClass('active');
+        var mmenu = smenu.parents('li');
+        mmenu.addClass('active');
+        smenu.parent().addClass('in');
+
+        $('.dataTables-example').DataTable({
+            pageLength: 25,
+            responsive: true,
+            //dom: 'T<"clear">rtp',
+            dom: '<"html5buttons"B>lTfgtp',
+            buttons: [
+                // {extend: 'copy'},
+                // {extend: 'csv'},
+                {extend: 'excel', title: 'ExampleFile'},
+                // {extend: 'pdf', title: 'ExampleFile'},
+
+                // {extend: 'print',
+                //     customize: function (win){
+                //         $(win.document.body).addClass('white-bg');
+                //         $(win.document.body).css('font-size', '10px');
+                //
+                //         $(win.document.body).find('table')
+                //             .addClass('compact')
+                //             .css('font-size', 'inherit');
+                //     }
+                // }
+                {text: '경기 등록',
+                    className: 'btn-primary2',
+                    action: function (win) {
+                        showGameModal();
+                    }
+                }
+            ]
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socical Sports Platform Service</title>
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <style>
+        .dataTables-example tbody td { vertical-align: middle !important;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse" id="side-menu-container">
+        </div>
+        <script>
+            $('#side-menu-container').load('side-menu.html');
+        </script>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div id="right-nav-container" class="row border-bottom">
+        </div>
+        <script>
+            $('#right-nav-container').load('right-nav-container.html');
+        </script>
+        <!-- end of header -->
+
+        <!-- start of submenu -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>클럽 관리</h2>
+                <div class="col-md-6" style="padding-left: 0">
+                    <ol class="breadcrumb" style="display: inline-block">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="game-list.html">클럽관리</a></li>
+                        <li class="active"><strong>경기 참여</strong></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 본문 -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>경기 상세정보</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-detail">
+                                    <tbody>
+                                    <tr>
+                                        <th style="width: 15%">경기명</th>
+                                        <td style="width: 35%">제 2회 직장인 길거리 농구</td>
+                                        <th style="width: 15%">종목</th>
+                                        <td style="width: 35%">3x3 농구</td>
+                                    </tr>
+                                    <tr>
+                                        <th>리그</th>
+                                        <td>직장인 농구 리그</td>
+                                        <th>상태</th>
+                                        <td>참가신청 중</td>
+                                    </tr>
+                                    <tr>
+                                        <th>시작일</th>
+                                        <td class="center">1999.08.10</td>
+                                        <th>종료일</th>
+                                        <td class="center">1999.08.20</td>
+                                    </tr>
+                                    <tr>
+                                        <th>장소</th>
+                                        <td>서울 모모 체육관 농구장</td>
+                                        <th>참여팀수</th>
+                                        <td>32팀</td>
+                                    </tr>
+                                    <tr>
+                                        <th>참가비</th>
+                                        <td>무료</td>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>경기설명</th>
+                                        <td colspan="3" style="height: 100px"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>참가조건</th>
+                                        <td colspan="3" style="height: 100px"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>우리 클럽 참여현황</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                    <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>팀명칭</th>
+                                        <th>팀인원</th>
+                                        <th>신청일</th>
+                                        <th>선청상태</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>로켓맨들</td>
+                                        <td>4인</td>
+                                        <td>2019.08.10</td>
+                                        <td>참여완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>점프하는 날도깨비들</td>
+                                        <td>3인</td>
+                                        <td>2019.08.11</td>
+                                        <td>참여대기</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-primary">변경사항 저장</button>
+                                <button type="button" class="btn btn-danger">경기 삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var smenu = $('#club-game');
+        smenu.addClass('active');
+        var mmenu = smenu.parents('li');
+        mmenu.addClass('active');
+
+        smenu.parent().addClass('in');
+
+        $('.dataTables-example').DataTable({
+            pageLength: 1000,
+            responsive: true,
+            dom: 'T<"clear">rt',
+            //dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                {extend: 'copy'},
+                {extend: 'csv'},
+                {extend: 'excel', title: 'ExampleFile'},
+                {extend: 'pdf', title: 'ExampleFile'},
+
+                {extend: 'print',
+                    customize: function (win){
+                        $(win.document.body).addClass('white-bg');
+                        $(win.document.body).css('font-size', '10px');
+
+                        $(win.document.body).find('table')
+                            .addClass('compact')
+                            .css('font-size', 'inherit');
+                    }
+                }
+            ]
+
+        });
+
+    });
+</script>
+</body>
+</html>

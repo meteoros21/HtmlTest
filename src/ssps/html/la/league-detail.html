@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socical Sports Platform Service</title>
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse" id="side-menu-container">
+        </div>
+        <script>
+            $('#side-menu-container').load('side-menu.html');
+        </script>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div id="right-nav-container" class="row border-bottom">
+        </div>
+        <script>
+            $('#right-nav-container').load('right-nav-container.html');
+        </script>
+        <!-- end of header -->
+
+        <!-- start of submenu -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>리그 관리</h2>
+                <div class="col-md-6" style="padding-left: 0">
+                <ol class="breadcrumb" style="display: inline-block">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a>리그관리</a></li>
+                    <li class="active"><strong>리그 상세</strong></li>
+                </ol>
+                </div>
+                <div class="col-md-6" style="text-align: right">
+                </div>
+            </div>
+        </div>
+
+        <!-- 본문 -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>리그 상세</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-detail" >
+                                    <tbody>
+                                    <tr>
+                                        <th style="width: 15%">종목</th>
+                                        <td style="width: 35%"><select name="sportsName" class="form-control input-sm">
+                                            <option value="1">3x3농구</option>
+                                            <option value="2">야구</option>
+                                        </select></td>
+                                        <th style="width: 15%">리그명칭</th>
+                                        <td style="width: 35%"><input type="text" name="leagueName" class="form-control input-sm" value="전국 직장인 리그"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>등록일</th>
+                                        <td class="center"><input type="text" name="regDate" class="form-control input-sm" value="2019.05.20" readonly="readonly"></td>
+                                        <th>운영상태</th>
+                                        <td class="center"><select name="leagueStatus" class="form-control input-sm">
+                                            <option value="1">정상운영</option>
+                                            <option value="2">운영중지</option>
+                                        </select></td>
+                                    </tr>
+                                    <tr>
+                                        <th>가입조건</th>
+                                        <td><select name="joinType" class="form-control input-sm">
+                                            <option value="1">자유가입</option>
+                                            <option value="2">심사</option>
+                                        </select> </td>
+                                        <th>회비</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>리그설명</th>
+                                        <td colspan="3">
+                                            <textarea name="leagueDscr" class="form-control input-sm"></textarea>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-primary">변경사항 저장</button>
+                                <button type="button" class="btn btn-danger">리그 삭제</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>리그 참여 클럽(3)</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="table-responsive">
+                                <table id="table-club" class="table table-striped table-bordered table-hover dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>클럽명칭</th>
+                                        <th>소속리그</th>
+                                        <th>클럽장</th>
+                                        <th>회원수</th>
+                                        <th>등록일</th>
+                                        <th>작업</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><a href="club-detail.html">서울대학교 농구 동아리</a></td>
+                                        <td>전국 대학생 리그</td>
+                                        <td class="center">홍길동</td>
+                                        <td class="center">35</td>
+                                        <td class="center">2018.02.20</td>
+                                        <td><button type="button" class="btn btn-sm btn-danger btn-xs">삭제</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><a href="club-detail.html">경기대학교 농구 동아리</a></td>
+                                        <td>전국 대학생 리그</td>
+                                        <td class="center">김만복</td>
+                                        <td class="center">40</td>
+                                        <td class="center">2018.01.22</td>
+                                        <td><button type="button" class="btn btn-sm btn-danger btn-xs">삭제</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><a href="club-detail.html">뛰어올라 농구 클럽</a></td>
+                                        <td>전국 대학생 리그</td>
+                                        <td class="center">황당해</td>
+                                        <td class="center">12</td>
+                                        <td class="center">2019.05.20</td>
+                                        <td><button type="button" class="btn btn-sm btn-danger btn-xs">삭제</button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var smenu = $('#league-list');
+        smenu.addClass('active');
+        var mmenu = smenu.parents('li');
+        mmenu.addClass('active');
+
+        smenu.parent().addClass('in');
+
+        $('.dataTables-example').DataTable({
+            pageLength: 25,
+            responsive: true,
+            dom: '<"html5buttons"B>fTgt',
+            buttons: [
+//                {extend: 'copy'},
+//                {extend: 'csv'},
+                {extend: 'excel', title: 'ExampleFile'},
+//                {extend: 'pdf', title: 'ExampleFile'},
+
+                // {extend: 'print',
+                //     customize: function (win){
+                //         $(win.document.body).addClass('white-bg');
+                //         $(win.document.body).css('font-size', '10px');
+                //
+                //         $(win.document.body).find('table')
+                //             .addClass('compact')
+                //             .css('font-size', 'inherit');
+                //     }
+                // }
+            ]
+
+        });
+
+    });
+</script>
+</body>
+</html>

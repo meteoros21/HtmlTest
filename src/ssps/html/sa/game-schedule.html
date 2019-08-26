@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socical Sports Platform Service</title>
-    <link href="../inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="../inspinia/css/animate.css" rel="stylesheet">
-    <link href="../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
 
     <!-- Mainly scripts -->
-    <script src="../inspinia/js/jquery-3.1.1.min.js"></script>
-    <script src="../inspinia/js/bootstrap.min.js"></script>
-    <script src="../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <style>
         .dataTables-example tbody td { vertical-align: middle !important;}
     </style>
@@ -40,21 +41,23 @@
 
         <!-- start of submenu -->
         <div class="row wrapper border-bottom white-bg page-heading">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <h2>경기 관리</h2>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a>경기관리</a>
-                    </li>
-                    <li class="active">
-                        <strong>경기 일정관리</strong>
-                    </li>
-                </ol>
-            </div>
-            <div class="col-lg-2">
+                <div class="col-md-6" style="padding-left: 0">
+                    <ol class="breadcrumb" style="display: inline-block">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="game-list.html">경기 리스트</a></li>
+                        <li class="active"><strong>경기 상세</strong></li>
+                    </ol>
+                </div>
+                <div class="col-md-6" style="text-align: right">
+                    <ol class="breadcrumb2" style="display: inline-block">
+                        <li><a href="game-detail.html">게임 상세</a></li>
+                        <li class="active"><a href="game-schedule.html">상세 일정</a></li>
+                        <li><a href="game-join.html">참여 관리</a></li>
+                        <li><a href="game-support.html">후원 및 협찬</a></li>
+                    </ol>
+                </div>
             </div>
         </div>
 
@@ -219,16 +222,16 @@
 
     </div>
 </div>
-<script src="../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="../inspinia/js/inspinia.js"></script>
-<script src="../inspinia/js/plugins/pace/pace.min.js"></script>
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
 
 <script>
     $(document).ready(function(){
 
-        var smenu = $('#game-schedule');
+        var smenu = $('#game-list');
         smenu.addClass('active');
         var mmenu = smenu.parents('li');
         mmenu.addClass('active');

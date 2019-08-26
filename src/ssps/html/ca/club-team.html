@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socical Sports Platform Service</title>
-    <link href="../inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="../inspinia/css/animate.css" rel="stylesheet">
-    <link href="../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
 
     <!-- Mainly scripts -->
-    <script src="../inspinia/js/jquery-3.1.1.min.js"></script>
-    <script src="../inspinia/js/bootstrap.min.js"></script>
-    <script src="../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <style>
-        .user-detail th {
-            text-align: center;
-            background-color: #f8f8f8;
-        }
-    </style>
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -44,16 +39,16 @@
         <!-- start of submenu -->
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>회원 관리</h2>
+                <h2>클럽 관리</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a>회원관리</a>
+                        <a>클럽관리</a>
                     </li>
                     <li class="active">
-                        <strong>회원 상세</strong>
+                        <strong>팀 관리</strong>
                     </li>
                 </ol>
             </div>
@@ -68,7 +63,7 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>회원 기본정보</h5>
+                            <h5>클럽 소속 팀목록</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -80,41 +75,42 @@
                         </div>
                         <div class="ibox-content">
                             <div class="table-responsive">
-                                <table class="table table-bordered user-detail">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>팀명칭</th>
+                                        <th>플레이어수</th>
+                                        <th>생성일</th>
+                                        <th>작업</th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                     <tr>
-                                        <th>아이디</th>
-                                        <td>kildong123</td>
-                                        <th>이름</th>
-                                        <td>홍길동</td>
-                                    </tr>
-                                    <tr>
-                                        <th>성별</th>
-                                        <td>남</td>
-                                        <th>생년월일</th>
+                                        <td>1</td>
+                                        <td><a href="team-detail.html?teamId=1">날아라 호랑이</a></td>
+                                        <td>3</td>
                                         <td>1999.05.03</td>
+                                        <td><a href="#" class="btn btn-danger btn-xs" onclick="deleteTeam(2)">팀삭제</a></td>
                                     </tr>
                                     <tr>
-                                        <th>휴대전화</th>
-                                        <td class="center">010-2234-4567</td>
-                                        <th>이메일</th>
-                                        <td class="center">kildong@test.com</td>
+                                        <td>2</td>
+                                        <td><a href="team-detail.html?teamId=1">무조건 이긴다.</a></td>
+                                        <td>4</td>
+                                        <td>1999.05.03</td>
+                                        <td><a href="#" class="btn btn-danger btn-xs" onclick="deleteTeam(2)">팀삭제</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
-
-                            <div style="text-align: right; width: 100%">
-                                <button id="btnStopMember" type="button" class="btn btn-danger">회원 정지</button>
-                                <button id="btnDeleteMember" type="button" class="btn btn-danger">회원 삭제</button>
-                                <button id="btnResetPwd" type="button" class="btn btn-white">비밀번호 초기화</button>
-                                <button id="btnBackToList" type="button" class="btn btn-white">회원 목록</button>
+                            <div class="button-group">
+                                <button type="button" class="btn btn-primary">팀 등록</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
         <div class="footer">
             <div class="pull-right">
@@ -127,16 +123,16 @@
 
     </div>
 </div>
-<script src="../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="../inspinia/js/inspinia.js"></script>
-<script src="../inspinia/js/plugins/pace/pace.min.js"></script>
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
 
 <script>
     $(document).ready(function(){
 
-        var smenu = $('#member-list');
+        var smenu = $('#club-team');
         smenu.addClass('active');
         var mmenu = smenu.parents('li');
         mmenu.addClass('active');
@@ -146,23 +142,23 @@
         $('.dataTables-example').DataTable({
             pageLength: 25,
             responsive: true,
-            dom: '<"html5buttons"B>lTfgitp',
+            dom: '<"html5buttons"B>lTfgtp',
             buttons: [
-                {extend: 'copy'},
-                {extend: 'csv'},
+                // {extend: 'copy'},
+                // {extend: 'csv'},
                 {extend: 'excel', title: 'ExampleFile'},
-                {extend: 'pdf', title: 'ExampleFile'},
+                // {extend: 'pdf', title: 'ExampleFile'},
 
-                {extend: 'print',
-                    customize: function (win){
-                        $(win.document.body).addClass('white-bg');
-                        $(win.document.body).css('font-size', '10px');
-
-                        $(win.document.body).find('table')
-                            .addClass('compact')
-                            .css('font-size', 'inherit');
-                    }
-                }
+                // {extend: 'print',
+                //     customize: function (win){
+                //         $(win.document.body).addClass('white-bg');
+                //         $(win.document.body).css('font-size', '10px');
+                //
+                //         $(win.document.body).find('table')
+                //             .addClass('compact')
+                //             .css('font-size', 'inherit');
+                //     }
+                // },
             ]
 
         });

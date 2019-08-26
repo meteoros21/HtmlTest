@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socical Sports Platform Service</title>
-    <link href="../inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="../inspinia/css/animate.css" rel="stylesheet">
-    <link href="../inspinia/css/style.css" rel="stylesheet">
-    <link href="../css/common.css" rel="stylesheet">
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
 
     <!-- Mainly scripts -->
-    <script src="../inspinia/js/jquery-3.1.1.min.js"></script>
-    <script src="../inspinia/js/bootstrap.min.js"></script>
-    <script src="../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -38,21 +38,23 @@
 
         <!-- start of submenu -->
         <div class="row wrapper border-bottom white-bg page-heading">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <h2>경기 관리</h2>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a>경기관리</a>
-                    </li>
-                    <li class="active">
-                        <strong>경기 상세정보</strong>
-                    </li>
-                </ol>
-            </div>
-            <div class="col-lg-2">
+                <div class="col-md-6" style="padding-left: 0">
+                    <ol class="breadcrumb" style="display: inline-block">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="game-list.html">경기 리스트</a></li>
+                        <li class="active"><strong>리그 상세</strong></li>
+                    </ol>
+                </div>
+                <div class="col-md-6" style="text-align: right">
+                    <ol class="breadcrumb2" style="display: inline-block">
+                        <li class="active"><a href="league-detail.html">리그 상세</a></li>
+                        <li><a href="game-schedule.html">상세 일정</a></li>
+                        <li><a href="game-join.html">참여 관리</a></li>
+                        <li><a href="game-support.html">후원 및 협찬</a></li>
+                    </ol>
+                </div>
             </div>
         </div>
 
@@ -79,21 +81,21 @@
                                     <tbody>
                                     <tr>
                                         <th style="width: 15%">경기명</th>
-                                        <td style="width: 35%"><input type="text" name="gameName" value="제 3회 대학생배 농구경기" class="form-control"></td>
+                                        <td style="width: 35%"><input type="text" name="gameName" value="제 3회 대학생배 농구경기" class="form-control input-sm"></td>
                                         <th style="width: 15%">종목</th>
-                                        <td style="width: 35%"><select name="sportsName" class="form-control">
+                                        <td style="width: 35%"><select name="sportsName" class="form-control input-sm">
                                             <option value="1">3x3농구</option>
                                             <option value="2">야구</option>
                                         </select></td>
                                     </tr>
                                     <tr>
                                         <th style="width: 15%">리그</th>
-                                        <td style="width: 35%"><select name="sportsName" class="form-control">
+                                        <td style="width: 35%"><select name="sportsName" class="form-control input-sm">
                                             <option value="1">전국 대학생 길거리 농구 리그</option>
                                             <option value="2">직장인 3x3 길거리 농구 리그</option>
                                         </select></td>
                                         <th style="width: 15%">상태</th>
-                                        <td style="width: 35%"><select name="gameStatus" class="form-control">
+                                        <td style="width: 35%"><select name="gameStatus" class="form-control input-sm">
                                             <option value="0">대기중</option>
                                             <option value="1">참가신청</option>
                                             <option value="2">경기중</option>
@@ -108,21 +110,31 @@
                                     </tr>
                                     <tr>
                                         <th>장소</th>
-                                        <td><input type="text" name="gameFee" value="서울 모모 체육관 농구장" class="form-control"></td>
+                                        <td><input type="text" name="gameFee" value="서울 모모 체육관 농구장" class="form-control input-sm"></td>
                                         <th>참여팀수</th>
-                                        <td>8</td>
+                                        <td><input type="number" name="gameFee" value="8" class="form-control input-sm"></td>
                                     </tr>
                                     <tr>
                                         <th>참가비</th>
-                                        <td><input type="number" name="gameFee" value="0" class="form-control"></td>
+                                        <td><input type="number" name="gameFee" value="0" class="form-control input-sm"></td>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>경기설명</th>
+                                        <td colspan="3"><textarea name="gameDscr" class="form-control input-sm" style="height: 150px"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <th>참가조건</th>
+                                        <td colspan="3"><textarea name="joinCond" class="form-control input-sm" style="height: 150px"></textarea></td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="button-group">
-
+                                <button type="button" class="btn btn-primary">변경사항 저장</button>
+                                <button type="button" class="btn btn-danger">경기 삭제</button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -327,11 +339,11 @@
 
     </div>
 </div>
-<script src="../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="../inspinia/js/inspinia.js"></script>
-<script src="../inspinia/js/plugins/pace/pace.min.js"></script>
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
 
 <script>
     $(document).ready(function(){

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socical Sports Platform Service</title>
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <style>
+        .dataTables-example tbody td { vertical-align: middle !important;}
+        #filter-season, #filter-league { margin-left: 5px }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse" id="side-menu-container">
+        </div>
+        <script>
+            $('#side-menu-container').load('side-menu.html');
+        </script>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div id="right-nav-container" class="row border-bottom">
+        </div>
+        <script>
+            $('#right-nav-container').load('right-nav-container.html');
+        </script>
+        <!-- end of header -->
+
+        <!-- start of submenu -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12" style="vertical-align: bottom">
+                <h2>경기 관리</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a>경기관리</a></li>
+                    <li class="active"><strong>클럽 기록관리</strong></li>
+                </ol>
+                <div class="form-inline" style="position: absolute; right: 15px; bottom: -10px; text-align: right">
+                    <label style="white-space: nowrap; display: inline-block; max-width: 100%;">리그:
+                        <select id="filter-sports" class="form-control input-sm">
+                            <option value="1">3x3 농구</option>
+                            <option value="1">야구</option>
+                            <option value="1">골프</option>
+                        </select>
+                        <select id="filter-league" class="form-control input-sm">
+                            <option value="아마추어 골프">미드아마추어 골프</option>
+                            <option value="3x3 길거리 농구">3x3 길거리 농구</option>
+                            <option value="4">서울 직장인 야구</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 본문 -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>클럽 랭킹</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                <a class="close-link"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                    <thead>
+                                    <tr>
+                                        <th>랭킹</th>
+                                        <th>클럽명칭</th>
+                                        <th>시즌획득점수</th>
+                                        <th>누적획득점수</th>
+                                        <th>전시즌 랭킹</th>
+                                        <th>클럽 등록일</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>서울대 농구 동아리</td>
+                                        <td>35</td>
+                                        <td>128</td>
+                                        <td>3</td>
+                                        <th>2018.02.02</th>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>모모 스포츠 클럽</td>
+                                        <td>28</td>
+                                        <td>138</td>
+                                        <td>2</td>
+                                        <th>2018.01.15</th>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var smenu = $('#club-record');
+        smenu.addClass('active');
+        var mmenu = smenu.parents('li');
+        mmenu.addClass('active');
+
+        smenu.parent().addClass('in');
+
+        $('.dataTables-example').DataTable({
+            pageLength: 50,
+            responsive: true,
+            //dom: 'T<"clear">rt',
+            dom: '<"html5buttons"B>lTfgtp',
+            buttons: [
+                // {extend: 'copy'},
+                // {extend: 'csv'},
+                {extend: 'excel', title: 'club-record'},
+                // {extend: 'pdf', title: 'ExampleFile'},
+                //
+                // {extend: 'print',
+                //     customize: function (win){
+                //         $(win.document.body).addClass('white-bg');
+                //         $(win.document.body).css('font-size', '10px');
+                //
+                //         $(win.document.body).find('table')
+                //             .addClass('compact')
+                //             .css('font-size', 'inherit');
+                //     }
+                // }
+            ]
+
+        });
+
+        var objSearch = $('.dataTables_filter').find('input[type="search"]');
+        var objLeague = $('<select id="filter-league" class="form-control input-sm"></select>');
+        objLeague.append($('<option value="">전체 리그</option>'));
+        objLeague.append($('<option value="직장인 리그">직장인 리그</option>'));
+        objLeague.append($('<option value="전국 대학생 리그">전국 대학생 리그</option>'));
+        objLeague.append($('<option value="전국 여대학생 리그">전국 여대학생 리그</option>'));
+        objSearch.before(objLeague);
+
+        var objSeason = $('<select id="filter-season" class="form-control input-sm"></select>');
+        objSeason.append($('<option value="2019">2019</option>'));
+        objSeason.append($('<option value="2018">2018</option>'));
+        objSearch.before(objSeason);
+
+        $('#filter-league').on('change', function () {
+            var val = $('#filter-league').val();
+
+            $('.dataTables-example').DataTable().column( 2 ).search(
+                val,
+                false,
+                true
+            ).draw();
+        });
+
+        $('#filter-season').on('change', function () {
+            var val = $('#filter-season').val();
+            alert(val);
+        });
+    });
+</script>
+</body>
+</html>
