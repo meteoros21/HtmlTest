@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socical Sports Platform Service</title>
+    <link href="../../inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../../inspinia/css/animate.css" rel="stylesheet">
+    <link href="../../inspinia/css/style.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="../../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../../inspinia/js/bootstrap.min.js"></script>
+    <script src="../../inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <style>
+        .dataTables-example tbody td { vertical-align: middle !important;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse" id="side-menu-container">
+        </div>
+        <script>
+            $('#side-menu-container').load('side-menu.html');
+        </script>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div id="right-nav-container" class="row border-bottom">
+        </div>
+        <script>
+            $('#right-nav-container').load('right-nav-container.html');
+        </script>
+        <!-- end of header -->
+
+        <!-- start of submenu -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>경기 관리</h2>
+                <div class="col-md-6" style="padding-left: 0">
+                    <ol class="breadcrumb" style="display: inline-block">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="game-list.html">경기 리스트</a></li>
+                        <li class="active"><strong>경기 상세</strong></li>
+                    </ol>
+                </div>
+                <div class="col-md-6" style="text-align: right">
+                    <ol class="breadcrumb2" style="display: inline-block">
+                        <li><a href="game-finished-detail.html">경기 상세</a></li>
+                        <li class="active"><a href="game-result.html">경기 결과</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 본문 -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>제 3회 전국대학생 챔피언쉽 예선전</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                <a class="close-link"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <div>날아라 병아리(Home)</div>
+                                <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                    <colgroup>
+                                        <col>
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>선수명</th>
+                                        <th>득점</th>
+                                        <th>리바운드</th>
+                                        <th>1점슛</th>
+                                        <th>2점슛</th>
+                                        <th title="프리드로우">프리드로우</th>
+                                        <th>어시스트</th>
+                                        <th>파울</th>
+                                        <th>스틸</th>
+                                        <th title="블록슛">블록슛</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>홍길동</td>
+                                        <td>11</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>김만득</td>
+                                        <td>11</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>김문수</td>
+                                        <td>11</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive">
+                                <div>코트의 난폭자(Away)</div>
+                                <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                    <colgroup>
+                                        <col>
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                        <col style="width: 9.2%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>선수명</th>
+                                        <th>득점</th>
+                                        <th>리바운드</th>
+                                        <th>1점슛</th>
+                                        <th>2점슛</th>
+                                        <th title="프리드로우">프리드로우</th>
+                                        <th>어시스트</th>
+                                        <th>파울</th>
+                                        <th>스틸</th>
+                                        <th title="블록슛">블록슛</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>오동동</td>
+                                        <td>11</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>박문수</td>
+                                        <td>11</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>임꺽정</td>
+                                        <td>11</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../inspinia/js/plugins/dataTables/datatables.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../inspinia/js/inspinia.js"></script>
+<script src="../../inspinia/js/plugins/pace/pace.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var smenu = $('#game-list');
+        smenu.addClass('active');
+        var mmenu = smenu.parents('li');
+        mmenu.addClass('active');
+
+        smenu.parent().addClass('in');
+
+        $('.dataTables-example').DataTable({
+            pageLength: 1000,
+            responsive: true,
+            dom: 'T<"clear">rt',
+            //dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                {extend: 'copy'},
+                {extend: 'csv'},
+                {extend: 'excel', title: 'ExampleFile'},
+                {extend: 'pdf', title: 'ExampleFile'},
+
+                {extend: 'print',
+                    customize: function (win){
+                        $(win.document.body).addClass('white-bg');
+                        $(win.document.body).css('font-size', '10px');
+
+                        $(win.document.body).find('table')
+                            .addClass('compact')
+                            .css('font-size', 'inherit');
+                    }
+                }
+            ]
+
+        });
+
+    });
+</script>
+</body>
+</html>
