@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TreeTest</title>
+    <link rel="stylesheet" href="../inspinia/css/bootstrap.css" />
+    <link rel="stylesheet" href="../inspinia/css/plugins/jsTree/style.css" />
+    <link rel="stylesheet" href="../inspinia/font-awesome/css/font-awesome.css">
+    <script src="../inspinia/js/jquery-3.1.1.min.js"></script>
+    <script src="../inspinia/js/bootstrap.min.js"></script>
+    <script src="../inspinia/js/plugins/jsTree/jstree.min.js"></script>
+    <style>
+        .jstree-open > .jstree-anchor > .fa-folder:before {
+            content: "\f07c";
+        }
+
+        .jstree-default .jstree-icon.none {
+            width: 0;
+        }
+        #jstree svg {
+            height: 20px;
+            margin-right: 4px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>TreeTest.html</h2>
+<div id="jstree">
+    <!-- in this example the tree is populated from inline HTML -->
+    <ul>
+        <li>Root node 1
+            <ul>
+                <li id="child_node_1" data-jstree='{"type":"html"}'>Child node 1</li>
+                <li>Child node 2</li>
+            </ul>
+        </li>
+        <li>Root node 2</li>
+    </ul>
+</div>
+<button>demo button</button>
+<script>
+    $(function () {
+        $('#jstree').jstree({
+            'core' : {
+                'check_callback' : true
+            },
+            'plugins' : [ 'types', 'dnd' ],
+            'types' : {
+                'default' : {
+                    'icon' : 'fa fa-folder-open-o'
+                },
+                'html' : {
+                    'icon' : 'fa fa-file-code-o'
+                },
+                'svg' : {
+                    'icon' : 'fa fa-file-picture-o'
+                },
+                'css' : {
+                    'icon' : 'fa fa-file-code-o'
+                },
+                'img' : {
+                    'icon' : 'fa fa-file-image-o'
+                },
+                'js' : {
+                    'icon' : 'fa fa-file-text-o'
+                }
+            }
+        });
+
+        //$('#jstree').jstree();
+
+        $('#jstree').on('changed.jstree', function (e, data) {
+            console.log(data.selected);
+        });
+
+        $('button').on('click', function () {
+            // 메쏘드 호출 방식이 참 많네
+            $('#jstree').jstree(true).select_node('child_node_1');
+            $('#jstree').jstree('select_node', 'child_node_1');
+            $.jstree.reference('#jstree').select_node('child_node_1');
+
+            //$('#child_node_1_anchor').find('i').removeClass('glyphicon').addClass('far').addClass('fa-file-code');
+            var node = $('#jstree').jstree(true).get_node('child_node_1');
+            //node.icon = 'fa fa-file-image-o';
+            var text = $('#jstree').jstree(true).get_text(node);
+            alert(text);
+
+        });
+    })
+</script>
+</body>
+</html>

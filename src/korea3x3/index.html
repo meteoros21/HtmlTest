@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            margin: 0;
+            background-color: #eff0f1;
+        }
+        .top-bg {
+            width: 100%;
+            height: 580px;
+            /*top: 130px;*/
+            /*position: absolute;*/
+            z-index: -1;
+            background: url('./img/board_bg.jpg') no-repeat 50% 50% / cover;
+        }
+        .account-nav-bar {
+            width: 100%;
+            background-color: #222;
+            height: 32px;
+        }
+        .main-nav-bar {
+            width: 100%;
+            background-color: black;
+            height: 98px;
+            z-index: 2;
+        }
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .body-section {
+            width: 100%;
+            margin-top: -530px;
+            min-height: 500px;
+        }
+        .footer-seciton {
+            background-color: #333;
+            min-height: 300px;
+        }
+        .ul-nav {
+            display: inline-block;
+        }
+        .ul-nav li {
+            margin-top: 5px;
+            list-style: none;
+            color: white;
+            display: inline-block;
+        }
+        .ul-nav li a {
+            padding: 0 15px;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+        }
+        .logo a {
+            display: block;
+            width: 164px;
+            height: 54px;
+            background: url('img/logo_h.gif') no-repeat 0 5px / 80%;
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="top-bg"></div>-->
+
+<div class="top-section" style="position: relative">
+    <div class="account-nav-bar" style="position: relative">
+        <div class="wrap">Test</div>
+    </div>
+    <div class="main-nav-bar" style="position: relative; vertical-align: middle">
+        <div class="wrap" style="height: 100%">
+            <div style="display: table; width: 100%; height: 100%">
+                <div style="display: table-row; width: 100%; height: 100%">
+                    <div class="logo" style="display: table-cell; height: 98px; vertical-align: middle">
+                        <a href="/">KOREA 3x3 BASKETBALL LEAGUE</a>
+                    </div>
+                    <div style="display: table-cell; height: 98px; text-align: right; vertical-align: middle">
+                        <ul class="ul-nav">
+                            <li><a href="#">KOREA 3x3</a></li>
+                            <li><a href="#">PREMIER LEAGUE</a></li>
+                            <li><a href="#">CHALLENGER</a></li>
+                            <li><a href="#">SPONSOR</a></li>
+                            <li><a href="#">BOARD</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+<!--            <h1 class="logo">-->
+<!--                <a href="/">KOREA 3x3 BASKETBALL LEAGUE</a>-->
+<!--            </h1>-->
+<!--            <ul class="ul-nav">-->
+<!--                <li><a href="#">KOREA 3x3</a></li>-->
+<!--                <li><a href="#">PREMIER LEAGUE</a></li>-->
+<!--                <li><a href="#">CHALLENGER</a></li>-->
+<!--                <li><a href="#">SPONSOR</a></li>-->
+<!--                <li><a href="#">BOARD</a></li>-->
+<!--            </ul>-->
+        </div>
+    </div>
+    <div class="top-bg"></div>
+</div>
+<div class="body-section" style="position: relative; ">
+    <div class="wrap" style="min-height: 500px">
+        <div class="page-name" style="margin: 0 auto; width: fit-content; text-align: center; position: relative;">
+            <h1 style="color: white; font-size: 48px">3x3 Board</h1>
+            <h2 style="color: white">Korea 3x3은 다양하고 흥미로운 소식을 빠르게 공유하고 있습니다.</h2>
+        </div>
+        <div class="page-content" style="background-color: white; min-height: 1500px; margin-bottom: 50px">
+            <h1>Test</h1>
+        </div>
+    </div>
+</div>
+<div class="footer-seciton" style="position: relative"></div>
+</body>
+</html>
