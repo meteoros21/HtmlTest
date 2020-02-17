@@ -1,0 +1,141 @@
+html, body {
+    margin: 0;
+    background-color: #eff0f1;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+div {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.top-bg {
+    width: 100%;
+    height: 580px;
+    /*top: 130px;*/
+    position: absolute;
+    z-index: 1;
+    background: url('../img/board_bg.jpg') no-repeat 50% 50% / cover;
+}
+.account-nav-bar {
+    width: 100%;
+    background-color: #222;
+    height: 32px;
+}
+.main-nav-bar {
+    width: 100%;
+    background-color: black;
+    height: 98px;
+    z-index: 2;
+}
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.body-section {
+    width: 100%;
+    margin-top: 0px;
+    min-height: 500px;
+}
+.footer-seciton {
+    background-color: #333;
+    min-height: 300px;
+}
+.ul-nav {
+    display: inline-block;
+}
+.ul-nav li {
+    margin-top: 5px;
+    list-style: none;
+    color: white;
+    display: inline-block;
+}
+.ul-nav li a {
+    padding: 0 15px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+}
+.ul-nav li a:hover {
+    font-weight: bold;
+}
+.logo a {
+    display: block;
+    width: 164px;
+    height: 54px;
+    background: url('../img/logo_h.gif') no-repeat 0 5px / 80%;
+    text-indent: -9999px;
+}
+.main-nav-bar-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: black
+}
+.ul-top-nav {
+    display: inline-block;
+    margin: 2px;
+}
+.ul-top-nav li {
+    margin-top: 5px;
+    list-style: none;
+    display: inline-block;
+}
+.ul-top-nav li a {
+    padding: 0 8px;
+    font-size: .8em;
+    color: #8a9399;
+    text-decoration: none;
+}
+.ul-top-nav li:first-child a {
+    color: rgb(255, 70, 63);
+}
+.ul-top-nav li a:before {
+    content: '|';
+    display: inline-block;
+    padding-right: 15px;
+    vertical-align: top;
+}
+.ul-top-nav li:first-of-type a:before {
+    display:none
+}
+.tab {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+}
+.tab li {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+}
+.tab li.active {
+    background-color: white;
+}
+.tab li:hover {
+    background-color: #DDDDDD;
+}
+.tab li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    display: block;
+}
+.tab li.active a {
+    color: black;
+    border-bottom: none;
+}
+.tab li a span {
+    padding-bottom: 10px;
+}
+.tab li.active a span {
+    border-bottom: 4px solid red;
+}

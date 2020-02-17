@@ -3,112 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Korea 3x3</title>
-    <style>
-        html, body {
-            margin: 0;
-            background-color: #eff0f1;
-        }
-        .top-bg {
-            width: 100%;
-            height: 580px;
-            /*top: 130px;*/
-            /*position: absolute;*/
-            z-index: -1;
-            background: url('./img/board_bg.jpg') no-repeat 50% 50% / cover;
-        }
-        .account-nav-bar {
-            width: 100%;
-            background-color: #222;
-            height: 32px;
-        }
-        .main-nav-bar {
-            width: 100%;
-            background-color: black;
-            height: 98px;
-            z-index: 2;
-        }
-        .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .body-section {
-            width: 100%;
-            margin-top: -535px;
-            min-height: 500px;
-        }
-        .footer-seciton {
-            background-color: #333;
-            min-height: 300px;
-        }
-        .ul-nav {
-            display: inline-block;
-        }
-        .ul-nav li {
-            margin-top: 5px;
-            list-style: none;
-            color: white;
-            display: inline-block;
-        }
-        .ul-nav li a {
-            padding: 0 15px;
-            font-size: 1.2em;
-            color: white;
-            text-decoration: none;
-        }
-        .ul-nav li a:hover {
-            font-weight: bold;
-        }
-        .logo a {
-            display: block;
-            width: 164px;
-            height: 54px;
-            background: url('img/logo_h.gif') no-repeat 0 5px / 80%;
-            text-indent: -9999px;
-        }
-        .main-nav-bar-container {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            height: 100%;
-            margin: 0 auto;
-            background-color: black
-        }
-        .ul-top-nav {
-            display: inline-block;
-            margin: 2px;
-        }
-        .ul-top-nav li {
-            margin-top: 5px;
-            list-style: none;
-            display: inline-block;
-        }
-        .ul-top-nav li a {
-            padding: 0 8px;
-            font-size: .8em;
-            color: #8a9399;
-            text-decoration: none;
-        }
-        .ul-top-nav li:first-child a {
-            color: rgb(255, 70, 63);
-        }
-        .ul-top-nav li a:before {
-            content: '|';
-            display: inline-block;
-            padding-right: 15px;
-            vertical-align: top;
-        }
-        .ul-top-nav li:first-of-type a:before {
-            display:none
-        }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/default.css?v=2">
 </head>
 <body>
 <!--<div class="top-bg"></div>-->
 
-<div class="top-section" style="position: relative">
-    <div class="account-nav-bar" style="position: relative">
+<div class="top-section">
+    <div class="account-nav-bar">
         <div class="wrap">
             <div style="text-align: right; width: 100%; height: 32px;">
                 <ul class="ul-top-nav">
@@ -135,39 +37,28 @@
             </div>
         </div>
     </div>
-<!--    <div class="main-nav-bar" style="position: relative; vertical-align: middle">-->
-<!--        <div class="wrap" style="height: 100%">-->
-<!--            <div style="display: table; width: 100%; height: 100%">-->
-<!--                <div style="display: table-row; width: 100%; height: 100%">-->
-<!--                    <div class="logo" style="display: table-cell; height: 98px; vertical-align: middle">-->
-<!--                        <a href="/">KOREA 3x3 BASKETBALL LEAGUE</a>-->
-<!--                    </div>-->
-<!--                    <div style="display: table-cell; height: 98px; text-align: right; vertical-align: middle">-->
-<!--                        <ul class="ul-nav">-->
-<!--                            <li><a href="#">KOREA 3x3</a></li>-->
-<!--                            <li><a href="#">PREMIER LEAGUE</a></li>-->
-<!--                            <li><a href="#">CHALLENGER</a></li>-->
-<!--                            <li><a href="#">SPONSOR</a></li>-->
-<!--                            <li><a href="#">BOARD</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <div class="top-bg"></div>
 </div>
-<div class="body-section" style="position: relative; ">
-    <div class="wrap" style="min-height: 500px">
-        <div class="page-name" style="margin: 0 auto; width: fit-content; text-align: center; position: relative;">
-            <h1 style="color: white; font-size: 48px">3x3 Board</h1>
-            <h2 style="color: white">Korea 3x3은 다양하고 흥미로운 소식을 빠르게 공유하고 있습니다.</h2>
+<div class="body-section">
+    <div class="top-bg"></div>
+    <div class="wrap" style="position: relative; z-index: 2;">
+        <div style="width: 100%; text-align: center; padding: 30px 0 10px 0;">
+            <h1 style="color: white; font-size: 48px; margin: 0">3x3 Board</h1>
+            <span style="display: inline-block; width: 40px; border-bottom: 2px solid white"></span>
+            <h3 style="color: white">Korea 3x3은 다양하고 흥미로운 소식을 빠르게 공유하고 있습니다.</h3>
         </div>
         <div class="page-content" style="background-color: white; min-height: 1500px; margin-bottom: 50px">
-            <h1>Test</h1>
+            <ul class="tab">
+                <li class="active"><a href="#"><span>NOTICE</span></a></li><li><a href="#"><span>NEWS</span></a></li><li><a href="#"><span>PHOTO</span></a></li>
+            </ul>
         </div>
     </div>
 </div>
 <div class="footer-seciton" style="position: relative"></div>
+<script>
+    $('.tab li a').click(function (e) {
+        $('.tab').find('.active').removeClass('active');
+        $(e.target).parents('li').addClass('active');
+    })
+</script>
 </body>
 </html>
